@@ -1,7 +1,9 @@
 {
   "name": "vue-ros3djs",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.2",
+  "description": "Vue components for ros3djs",
+  "keywords": ["vue", "vuejs", "ros", "rviz", "ros3d", "ros3djs"],
+  "author": "Ludwig Waffenschmidt <l.waffenschmidt@wzl.rwth-aachen.de>",
   "main": "dist/vue-ros3djs.ssr.js",
   "module": "dist/vue-ros3djs.esm.js",
   "unpkg": "dist/vue-ros3djs.min.js",
