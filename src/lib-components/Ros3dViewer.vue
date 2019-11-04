@@ -6,13 +6,14 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import * as TWEEN from '@tweenjs/tween.js'
+import TWEEN from '@tweenjs/tween.js'
 
 import * as ROS3D from 'ros3d'
 import * as ROSLIB from 'roslib'
 
-var THREE = window.THREE = require('three');
+import * as Three from 'three'
+
+// var Three = window.Three = require('three');
 
 import { setTimeout, clearTimeout } from 'timers';
 
@@ -67,13 +68,13 @@ export default {
         this.viewer.scene.remove(this.arrow);
       }
     },
-    position(n, o) {
+    position(n) {
       if (n != null) {
         this.arrow.position.set(n.x, n.y, n.z + 0.05);
         this.circle.position.set(n.x, n.y, n.z + 0.05);
       }
     },
-    direction(n, o) {
+    direction(n) {
       if (n != null) this.arrow.setDirection(n);
     },
   },
@@ -131,13 +132,13 @@ export default {
       ros: this.ros,
       tfClient: this.tfClient,
       rootObject: this.viewer.scene,
-      material: new THREE.MeshBasicMaterial({color: 0xff0000}),
+      material: new Three.MeshBasicMaterial({color: 0xff0000}),
     });
 
     // Create circle for touchdown animation
-    var geometry = new THREE.CircleGeometry( 1, 32 );
-    var material = new THREE.MeshPhongMaterial( { color: 0x000000, specular: 0x666666, emissive: 0x994400, shininess: 0, opacity: 0.5, transparent: true } );
-    this.circle = new THREE.Mesh( geometry, material );
+    var geometry = new Three.CircleGeometry( 1, 32 );
+    var material = new Three.MeshPhongMaterial( { color: 0x000000, specular: 0x666666, emissive: 0x994400, shininess: 0, opacity: 0.5, transparent: true } );
+    this.circle = new Three.Mesh( geometry, material );
     this.circle.visible = false;
     this.circle.scale.set(0, 0, 0);
     this.viewer.scene.add( this.circle );
@@ -177,10 +178,10 @@ export default {
           domEvent.type === 'click' ||
           domEvent.type === 'touchend') {
         if (this.hold) {
-          var quat = new THREE.Quaternion();
+          var quat = new Three.Quaternion();
           this.arrow.getWorldQuaternion(quat);
 
-          quat = quat.multiply(new THREE.Quaternion(0, 0, Math.sqrt(0.5), Math.sqrt(0.5)));
+          quat = quat.multiply(new Three.Quaternion(0, 0, Math.sqrt(0.5), Math.sqrt(0.5)));
 
           this.$emit("touch",
             {
@@ -224,16 +225,19 @@ export default {
 
 
       // Calculate the touch position in ROS space
-      var vec = new THREE.Vector3(); // create once and reuse
-      var pos = new THREE.Vector3(); // create once and reuse
+      var vec = new Three.Vector3(); // create once and reuse
+      var pos = new Three.Vector3(); // create once and reuse
       vec.set(
           ( pos_x / window.innerWidth ) * 2 - 1,
           - ( pos_y / window.innerHeight ) * 2 + 1,
           0.5 );
+
       vec.unproject( this.viewer.camera );
       vec.sub( this.viewer.camera.position ).normalize();
       var distance = - this.viewer.camera.position.z / vec.z;
       pos.copy( this.viewer.camera.position ).add( vec.multiplyScalar( distance ) );
+
+      var scaleVector, scaleFactor, scale;
 
       if (domEvent.type === 'mousedown' && domEvent.button === 2) { // Right click
         this.hold = true;
@@ -241,15 +245,15 @@ export default {
         this.screenPosition = [pos_x, pos_y];
         
         // Make touch group scale independent of camera
-        var scaleVector = new THREE.Vector3();
-        var scaleFactor = 20;
-        var scale = scaleVector.subVectors(this.position, this.viewer.camera.position).length() / scaleFactor;
+        scaleVector = new Three.Vector3();
+        scaleFactor = 20;
+        scale = scaleVector.subVectors(this.position, this.viewer.camera.position).length() / scaleFactor;
         this.arrow.scale.set(scale, scale, 1);
         
         return;
       }
 
-      if (domEvent.type === 'touchmove' || domEvent.type === 'mousemove') {
+      else if (domEvent.type === 'touchmove' || domEvent.type === 'mousemove') {
         if (this.hold) {
           this.hold = true;
           this.direction = pos.sub(this.position);
@@ -261,22 +265,22 @@ export default {
         return;
       }
 
-      if (domEvent.type === 'touchstart') {
+      else if (domEvent.type === 'touchstart') {
         this.position = pos;
         this.screenPosition = [pos_x, pos_y];
         this.startTimer();
 
         // Make touch group scale independent of camera
-        var scaleVector = new THREE.Vector3();
-        var scaleFactor = 10;
-        var scale = scaleVector.subVectors(this.position, this.viewer.camera.position).length() / scaleFactor;
+        scaleVector = new Three.Vector3();
+        scaleFactor = 10;
+        scale = scaleVector.subVectors(this.position, this.viewer.camera.position).length() / scaleFactor;
         this.arrow.scale.set(scale, scale, 1);
         
         this.circle.visible = true;
         if (this.circleScaleTween) this.circleScaleTween.stop();
         this.circle.scale.set(0, 0, 0);
         this.circleScaleTween = new TWEEN.Tween(this.circle.scale.clone())
-                                      .to(new THREE.Vector3(scale, scale, 1), this.longPressDuration)
+                                      .to(new Three.Vector3(scale, scale, 1), this.longPressDuration)
                                       .easing(TWEEN.Easing.Back.InOut)
                                       .onUpdate((obj) => {
                                         this.circle.scale.copy(obj)

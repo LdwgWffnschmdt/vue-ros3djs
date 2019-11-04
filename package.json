@@ -1,6 +1,6 @@
 {
   "name": "vue-ros3djs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/vue-ros3djs.ssr.js",
   "module": "dist/vue-ros3djs.esm.js",
@@ -17,7 +17,9 @@
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
   },
   "dependencies": {
-    "ros3d": "^1.0.1"
+    "@tweenjs/tween.js": "^18.3.2",
+    "ros3d": "^1.0.1",
+    "three": "^0.110.0"
   },
   "devDependencies": {
     "cross-env": "^6.0.3",

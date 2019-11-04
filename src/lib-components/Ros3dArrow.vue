@@ -4,6 +4,7 @@
 
 <script>
 import * as ROS3D from 'ros3d'
+import * as Three from 'three'
 
 export default {
   name: 'ros3d-arrow',
@@ -71,7 +72,7 @@ export default {
     },
   },
   watch: {
-    color(n, o) {
+    color(n) {
       this.object.material.color.set(n);
     },
     x() { this.$nextTick(this.setPosition) },
@@ -80,10 +81,10 @@ export default {
     directionX() { this.$nextTick(this.setDirection) },
     directionY() { this.$nextTick(this.setDirection) },
     directionZ() { this.$nextTick(this.setDirection) },
-    length(n, o) {
+    length(n) {
       this.object.setLength(n);
     },
-    visible(newState, oldState) {
+    visible(newState) {
       if (newState) this.show();
       else this.hide();
     }
@@ -100,7 +101,7 @@ export default {
       this.object.position.set(this.x, this.y, this.z);
     },
     setDirection() {
-      this.object.setDirection(new THREE.Vector3(this.directionX || 0, this.directionY || 0, this.directionZ || 0));
+      this.object.setDirection(new Three.Vector3(this.directionX || 0, this.directionY || 0, this.directionZ || 0));
     }
   },
   mounted() {
@@ -109,12 +110,12 @@ export default {
       tfClient : this.$parent.tfClient,
       rootObject : this.$parent.viewer.scene,
       origin : this.position,
-      direction : new THREE.Vector3(this.directionX || 0, this.directionY || 0, this.directionZ || 0),
+      direction : new Three.Vector3(this.directionX || 0, this.directionY || 0, this.directionZ || 0),
       length : this.length,
       headLength : this.headLength,
       shaftDiameter : this.shaftDiameter,
       headDiameter : this.headDiameter,
-      material : new THREE.MeshBasicMaterial({color: this.color}),
+      material : new Three.MeshBasicMaterial({color: this.color}),
     });
     this.object.name = this._uid;
     if (this.visible) this.show();

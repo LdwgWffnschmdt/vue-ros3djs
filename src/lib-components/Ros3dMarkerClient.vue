@@ -20,12 +20,12 @@ export default {
     },
   },
   watch: {
-    topic(n, o) {
+    topic(n) {
       this.object.unsubscribe();
       this.object.topicName = n;
       this.object.subscribe();
     },
-    visible(newState, oldState) {
+    visible(newState) {
       if (newState) this.show();
       else this.hide();
     }

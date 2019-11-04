@@ -26,25 +26,25 @@ export default {
     },
   },
   watch: {
-    topic(n, o) {
+    topic(n) {
       this.object.unsubscribe();
       this.object.topicName = n;
       this.object.subscribe();
     },
-    continuous(n, o) {
+    continuous(n) {
       this.object.continuous = n;
       if (n) this.object.subscribe();
     },
-    x(n, o) {
+    x() {
       this.$nextTick(this.setOffset);
     },
-    y(n, o) {
+    y() {
       this.$nextTick(this.setOffset);
     },
-    z(n, o) {
+    z() {
       this.$nextTick(this.setOffset);
     },
-    visible(newState, oldState) {
+    visible(newState) {
       if (newState) this.show();
       else this.hide();
     }
@@ -75,9 +75,7 @@ export default {
 
   
     this.object.processMessage = (message) => {
-      console.log("MAP INCOMING");
       ROS3D.OccupancyGridClient.prototype.processMessage.call(this.object, message);
-      console.log("MAP LOADED");
     };
 
 

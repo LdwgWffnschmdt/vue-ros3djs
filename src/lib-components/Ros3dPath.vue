@@ -25,15 +25,15 @@ export default {
     },
   },
   watch: {
-    topic(n, o) {
+    topic(n) {
       this.object.unsubscribe();
       this.object.topicName = n;
       this.object.subscribe();
     },
-    color(n, o) {
+    color(n) {
       this.object.color = n;
     },
-    visible(newState, oldState) {
+    visible(newState) {
       if (newState) this.show();
       else this.hide();
     }

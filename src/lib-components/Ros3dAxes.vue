@@ -60,7 +60,7 @@ export default {
     },
   },
   watch: {
-    visible(newState, oldState) {
+    visible(newState) {
       if (newState) this.show();
       else this.hide();
     },

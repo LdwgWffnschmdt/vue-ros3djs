@@ -1,4 +1,4 @@
-'use strict';Object.defineProperty(exports,'__esModule',{value:true});var ROS3D=require('ros3d'),ROSLIB=require('roslib');require('vue');var TWEEN=require('@tweenjs/tween.js'),timers=require('timers');//
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});function _interopDefault(e){return(e&&(typeof e==='object')&&'default'in e)?e['default']:e}var ROS3D=require('ros3d'),Three=require('three'),ROSLIB=require('roslib'),TWEEN=_interopDefault(require('@tweenjs/tween.js')),timers=require('timers');//
 
 var script = {
   name: 'ros3d-arrow',
@@ -66,7 +66,7 @@ var script = {
     },
   },
   watch: {
-    color: function color(n, o) {
+    color: function color(n) {
       this.object.material.color.set(n);
     },
     x: function x() { this.$nextTick(this.setPosition); },
@@ -75,10 +75,10 @@ var script = {
     directionX: function directionX() { this.$nextTick(this.setDirection); },
     directionY: function directionY() { this.$nextTick(this.setDirection); },
     directionZ: function directionZ() { this.$nextTick(this.setDirection); },
-    length: function length(n, o) {
+    length: function length(n) {
       this.object.setLength(n);
     },
-    visible: function visible(newState, oldState) {
+    visible: function visible(newState) {
       if (newState) { this.show(); }
       else { this.hide(); }
     }
@@ -95,7 +95,7 @@ var script = {
       this.object.position.set(this.x, this.y, this.z);
     },
     setDirection: function setDirection() {
-      this.object.setDirection(new THREE.Vector3(this.directionX || 0, this.directionY || 0, this.directionZ || 0));
+      this.object.setDirection(new Three.Vector3(this.directionX || 0, this.directionY || 0, this.directionZ || 0));
     }
   },
   mounted: function mounted() {
@@ -104,12 +104,12 @@ var script = {
       tfClient : this.$parent.tfClient,
       rootObject : this.$parent.viewer.scene,
       origin : this.position,
-      direction : new THREE.Vector3(this.directionX || 0, this.directionY || 0, this.directionZ || 0),
+      direction : new Three.Vector3(this.directionX || 0, this.directionY || 0, this.directionZ || 0),
       length : this.length,
       headLength : this.headLength,
       shaftDiameter : this.shaftDiameter,
       headDiameter : this.headDiameter,
-      material : new THREE.MeshBasicMaterial({color: this.color}),
+      material : new Three.MeshBasicMaterial({color: this.color}),
     });
     this.object.name = this._uid;
     if (this.visible) { this.show(); }
@@ -202,7 +202,7 @@ var __vue_staticRenderFns__ = [];
   /* scoped */
   var __vue_scope_id__ = undefined;
   /* module identifier */
-  var __vue_module_identifier__ = "data-v-35cc0e02";
+  var __vue_module_identifier__ = "data-v-4a1d1920";
   /* functional template */
   var __vue_is_functional_template__ = false;
   /* style inject */
@@ -281,7 +281,7 @@ var script$1 = {
     },
   },
   watch: {
-    visible: function visible(newState, oldState) {
+    visible: function visible(newState) {
       if (newState) { this.show(); }
       else { this.hide(); }
     },
@@ -343,7 +343,7 @@ var __vue_staticRenderFns__$1 = [];
   /* scoped */
   var __vue_scope_id__$1 = undefined;
   /* module identifier */
-  var __vue_module_identifier__$1 = "data-v-0978aea2";
+  var __vue_module_identifier__$1 = "data-v-6c4af85e";
   /* functional template */
   var __vue_is_functional_template__$1 = false;
   /* style inject */
@@ -397,20 +397,20 @@ var script$2 = {
     }
   },
   watch: {
-    visible: function visible(newState, oldState) {
+    visible: function visible(newState) {
       if (newState) { this.show(); }
       else { this.hide(); }
     },
-    numCells: function numCells(n, o) {
+    numCells: function numCells() {
       this.$nextTick(this.createObject);
     },
-    color: function color(n, o) {
+    color: function color() {
       this.$nextTick(this.createObject);
     },
-    lineWidth: function lineWidth(n, o) {
+    lineWidth: function lineWidth() {
       this.$nextTick(this.createObject);
     },
-    cellSize: function cellSize(n, o) {
+    cellSize: function cellSize() {
       this.$nextTick(this.createObject);
     }
   },
@@ -454,7 +454,7 @@ var __vue_staticRenderFns__$2 = [];
   /* scoped */
   var __vue_scope_id__$2 = undefined;
   /* module identifier */
-  var __vue_module_identifier__$2 = "data-v-74d4bab0";
+  var __vue_module_identifier__$2 = "data-v-570218e8";
   /* functional template */
   var __vue_is_functional_template__$2 = false;
   /* style inject */
@@ -493,12 +493,12 @@ var script$3 = {
     },
   },
   watch: {
-    topic: function topic(n, o) {
+    topic: function topic(n) {
       this.object.unsubscribe();
       this.object.topicName = n;
       this.object.subscribe();
     },
-    visible: function visible(newState, oldState) {
+    visible: function visible(newState) {
       if (newState) { this.show(); }
       else { this.hide(); }
     }
@@ -539,7 +539,7 @@ var __vue_staticRenderFns__$3 = [];
   /* scoped */
   var __vue_scope_id__$3 = undefined;
   /* module identifier */
-  var __vue_module_identifier__$3 = "data-v-01d75084";
+  var __vue_module_identifier__$3 = "data-v-53254802";
   /* functional template */
   var __vue_is_functional_template__$3 = false;
   /* style inject */
@@ -593,23 +593,23 @@ var script$4 = {
     }
   },
   watch: {
-    topic: function topic(n, o) {
+    topic: function topic(n) {
       this.object.unsubscribe();
       this.object.topicName = n;
       this.object.subscribe();
     },
-    compression: function compression(n, o) {
+    compression: function compression(n) {
       this.object.unsubscribe();
       this.object.compression = n;
       this.object.subscribe();
     },
-    color: function color(n, o) {
+    color: function color() {
       this.$nextTick(this.createObject);
     },
-    particleSize: function particleSize(n, o) {
+    particleSize: function particleSize() {
       this.$nextTick(this.createObject);
     },
-    visible: function visible(newState, oldState) {
+    visible: function visible(newState) {
       if (newState) { this.show(); }
       else { this.hide(); }
     }
@@ -660,7 +660,7 @@ var __vue_staticRenderFns__$4 = [];
   /* scoped */
   var __vue_scope_id__$4 = undefined;
   /* module identifier */
-  var __vue_module_identifier__$4 = "data-v-20bd79de";
+  var __vue_module_identifier__$4 = "data-v-62e2101c";
   /* functional template */
   var __vue_is_functional_template__$4 = false;
   /* style inject */
@@ -699,12 +699,12 @@ var script$5 = {
     },
   },
   watch: {
-    topic: function topic(n, o) {
+    topic: function topic(n) {
       this.object.unsubscribe();
       this.object.topicName = n;
       this.object.subscribe();
     },
-    visible: function visible(newState, oldState) {
+    visible: function visible(newState) {
       if (newState) { this.show(); }
       else { this.hide(); }
     }
@@ -744,7 +744,7 @@ var __vue_staticRenderFns__$5 = [];
   /* scoped */
   var __vue_scope_id__$5 = undefined;
   /* module identifier */
-  var __vue_module_identifier__$5 = "data-v-4ba35b8a";
+  var __vue_module_identifier__$5 = "data-v-3fec0139";
   /* functional template */
   var __vue_is_functional_template__$5 = false;
   /* style inject */
@@ -788,25 +788,25 @@ var script$6 = {
     },
   },
   watch: {
-    topic: function topic(n, o) {
+    topic: function topic(n) {
       this.object.unsubscribe();
       this.object.topicName = n;
       this.object.subscribe();
     },
-    continuous: function continuous(n, o) {
+    continuous: function continuous(n) {
       this.object.continuous = n;
       if (n) { this.object.subscribe(); }
     },
-    x: function x(n, o) {
+    x: function x() {
       this.$nextTick(this.setOffset);
     },
-    y: function y(n, o) {
+    y: function y() {
       this.$nextTick(this.setOffset);
     },
-    z: function z(n, o) {
+    z: function z() {
       this.$nextTick(this.setOffset);
     },
-    visible: function visible(newState, oldState) {
+    visible: function visible(newState) {
       if (newState) { this.show(); }
       else { this.hide(); }
     }
@@ -839,9 +839,7 @@ var script$6 = {
 
   
     this.object.processMessage = function (message) {
-      console.log("MAP INCOMING");
       ROS3D.OccupancyGridClient.prototype.processMessage.call(this$1.object, message);
-      console.log("MAP LOADED");
     };
 
 
@@ -862,7 +860,7 @@ var __vue_staticRenderFns__$6 = [];
   /* scoped */
   var __vue_scope_id__$6 = undefined;
   /* module identifier */
-  var __vue_module_identifier__$6 = "data-v-53c9529e";
+  var __vue_module_identifier__$6 = "data-v-595057b6";
   /* functional template */
   var __vue_is_functional_template__$6 = false;
   /* style inject */
@@ -906,15 +904,15 @@ var script$7 = {
     },
   },
   watch: {
-    topic: function topic(n, o) {
+    topic: function topic(n) {
       this.object.unsubscribe();
       this.object.topicName = n;
       this.object.subscribe();
     },
-    color: function color(n, o) {
+    color: function color(n) {
       this.object.color = n;
     },
-    visible: function visible(newState, oldState) {
+    visible: function visible(newState) {
       if (newState) { this.show(); }
       else { this.hide(); }
     }
@@ -955,7 +953,7 @@ var __vue_staticRenderFns__$7 = [];
   /* scoped */
   var __vue_scope_id__$7 = undefined;
   /* module identifier */
-  var __vue_module_identifier__$7 = "data-v-53da4f48";
+  var __vue_module_identifier__$7 = "data-v-9c5a8ed0";
   /* functional template */
   var __vue_is_functional_template__$7 = false;
   /* style inject */
@@ -998,13 +996,13 @@ var script$8 = {
     },
   },
   watch: {
-    model: function model(n, o) {
+    model: function model() {
       this.$nextTick(this.createObject);
     },
-    frameID: function frameID(n, o) {
+    frameID: function frameID() {
       this.$nextTick(this.createObject);
     },
-    visible: function visible(newState, oldState) {
+    visible: function visible(newState) {
       if (newState) { this.show(); }
       else { this.hide(); }
     }
@@ -1049,7 +1047,7 @@ var __vue_staticRenderFns__$8 = [];
   /* scoped */
   var __vue_scope_id__$8 = undefined;
   /* module identifier */
-  var __vue_module_identifier__$8 = "data-v-cc55624a";
+  var __vue_module_identifier__$8 = "data-v-456d291d";
   /* functional template */
   var __vue_is_functional_template__$8 = false;
   /* style inject */
@@ -1072,8 +1070,6 @@ var __vue_staticRenderFns__$8 = [];
     undefined,
     undefined
   );//
-
-var THREE$1 = window.THREE = require('three');
 
 var script$9 = {
   name: 'ros3d-viewer',
@@ -1126,13 +1122,13 @@ var script$9 = {
         this.viewer.scene.remove(this.arrow);
       }
     },
-    position: function position(n, o) {
+    position: function position(n) {
       if (n != null) {
         this.arrow.position.set(n.x, n.y, n.z + 0.05);
         this.circle.position.set(n.x, n.y, n.z + 0.05);
       }
     },
-    direction: function direction(n, o) {
+    direction: function direction(n) {
       if (n != null) { this.arrow.setDirection(n); }
     },
   },
@@ -1192,13 +1188,13 @@ var script$9 = {
       ros: this.ros,
       tfClient: this.tfClient,
       rootObject: this.viewer.scene,
-      material: new THREE$1.MeshBasicMaterial({color: 0xff0000}),
+      material: new Three.MeshBasicMaterial({color: 0xff0000}),
     });
 
     // Create circle for touchdown animation
-    var geometry = new THREE$1.CircleGeometry( 1, 32 );
-    var material = new THREE$1.MeshPhongMaterial( { color: 0x000000, specular: 0x666666, emissive: 0x994400, shininess: 0, opacity: 0.5, transparent: true } );
-    this.circle = new THREE$1.Mesh( geometry, material );
+    var geometry = new Three.CircleGeometry( 1, 32 );
+    var material = new Three.MeshPhongMaterial( { color: 0x000000, specular: 0x666666, emissive: 0x994400, shininess: 0, opacity: 0.5, transparent: true } );
+    this.circle = new Three.Mesh( geometry, material );
     this.circle.visible = false;
     this.circle.scale.set(0, 0, 0);
     this.viewer.scene.add( this.circle );
@@ -1242,10 +1238,10 @@ var script$9 = {
           domEvent.type === 'click' ||
           domEvent.type === 'touchend') {
         if (this.hold) {
-          var quat = new THREE$1.Quaternion();
+          var quat = new Three.Quaternion();
           this.arrow.getWorldQuaternion(quat);
 
-          quat = quat.multiply(new THREE$1.Quaternion(0, 0, Math.sqrt(0.5), Math.sqrt(0.5)));
+          quat = quat.multiply(new Three.Quaternion(0, 0, Math.sqrt(0.5), Math.sqrt(0.5)));
 
           this.$emit("touch",
             {
@@ -1289,16 +1285,19 @@ var script$9 = {
 
 
       // Calculate the touch position in ROS space
-      var vec = new THREE$1.Vector3(); // create once and reuse
-      var pos = new THREE$1.Vector3(); // create once and reuse
+      var vec = new Three.Vector3(); // create once and reuse
+      var pos = new Three.Vector3(); // create once and reuse
       vec.set(
           ( pos_x / window.innerWidth ) * 2 - 1,
           - ( pos_y / window.innerHeight ) * 2 + 1,
           0.5 );
+
       vec.unproject( this.viewer.camera );
       vec.sub( this.viewer.camera.position ).normalize();
       var distance = - this.viewer.camera.position.z / vec.z;
       pos.copy( this.viewer.camera.position ).add( vec.multiplyScalar( distance ) );
+
+      var scaleVector, scaleFactor, scale;
 
       if (domEvent.type === 'mousedown' && domEvent.button === 2) { // Right click
         this.hold = true;
@@ -1306,15 +1305,15 @@ var script$9 = {
         this.screenPosition = [pos_x, pos_y];
         
         // Make touch group scale independent of camera
-        var scaleVector = new THREE$1.Vector3();
-        var scaleFactor = 20;
-        var scale = scaleVector.subVectors(this.position, this.viewer.camera.position).length() / scaleFactor;
+        scaleVector = new Three.Vector3();
+        scaleFactor = 20;
+        scale = scaleVector.subVectors(this.position, this.viewer.camera.position).length() / scaleFactor;
         this.arrow.scale.set(scale, scale, 1);
         
         return;
       }
 
-      if (domEvent.type === 'touchmove' || domEvent.type === 'mousemove') {
+      else if (domEvent.type === 'touchmove' || domEvent.type === 'mousemove') {
         if (this.hold) {
           this.hold = true;
           this.direction = pos.sub(this.position);
@@ -1326,22 +1325,22 @@ var script$9 = {
         return;
       }
 
-      if (domEvent.type === 'touchstart') {
+      else if (domEvent.type === 'touchstart') {
         this.position = pos;
         this.screenPosition = [pos_x, pos_y];
         this.startTimer();
 
         // Make touch group scale independent of camera
-        var scaleVector = new THREE$1.Vector3();
-        var scaleFactor = 10;
-        var scale = scaleVector.subVectors(this.position, this.viewer.camera.position).length() / scaleFactor;
+        scaleVector = new Three.Vector3();
+        scaleFactor = 10;
+        scale = scaleVector.subVectors(this.position, this.viewer.camera.position).length() / scaleFactor;
         this.arrow.scale.set(scale, scale, 1);
         
         this.circle.visible = true;
         if (this.circleScaleTween) { this.circleScaleTween.stop(); }
         this.circle.scale.set(0, 0, 0);
         this.circleScaleTween = new TWEEN.Tween(this.circle.scale.clone())
-                                      .to(new THREE$1.Vector3(scale, scale, 1), this.longPressDuration)
+                                      .to(new Three.Vector3(scale, scale, 1), this.longPressDuration)
                                       .easing(TWEEN.Easing.Back.InOut)
                                       .onUpdate(function (obj) {
                                         this$1.circle.scale.copy(obj);
@@ -1361,7 +1360,7 @@ var __vue_staticRenderFns__$9 = [];
   /* scoped */
   var __vue_scope_id__$9 = undefined;
   /* module identifier */
-  var __vue_module_identifier__$9 = "data-v-4f8feb68";
+  var __vue_module_identifier__$9 = "data-v-7b20e75c";
   /* functional template */
   var __vue_is_functional_template__$9 = false;
   /* style inject */

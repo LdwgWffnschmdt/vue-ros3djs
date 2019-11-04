@@ -35,20 +35,20 @@ export default {
     }
   },
   watch: {
-    visible(newState, oldState) {
+    visible(newState) {
       if (newState) this.show();
       else this.hide();
     },
-    numCells(n, o) {
+    numCells() {
       this.$nextTick(this.createObject);
     },
-    color(n, o) {
+    color() {
       this.$nextTick(this.createObject);
     },
-    lineWidth(n, o) {
+    lineWidth() {
       this.$nextTick(this.createObject);
     },
-    cellSize(n, o) {
+    cellSize() {
       this.$nextTick(this.createObject);
     }
   },

@@ -24,13 +24,13 @@ export default {
     },
   },
   watch: {
-    model(n, o) {
+    model() {
       this.$nextTick(this.createObject);
     },
-    frameID(n, o) {
+    frameID() {
       this.$nextTick(this.createObject);
     },
-    visible(newState, oldState) {
+    visible(newState) {
       if (newState) this.show();
       else this.hide();
     }

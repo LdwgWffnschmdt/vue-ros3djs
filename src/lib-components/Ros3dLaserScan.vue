@@ -35,23 +35,23 @@ export default {
     }
   },
   watch: {
-    topic(n, o) {
+    topic(n) {
       this.object.unsubscribe();
       this.object.topicName = n;
       this.object.subscribe();
     },
-    compression(n, o) {
+    compression(n) {
       this.object.unsubscribe();
       this.object.compression = n;
       this.object.subscribe();
     },
-    color(n, o) {
+    color() {
       this.$nextTick(this.createObject);
     },
-    particleSize(n, o) {
+    particleSize() {
       this.$nextTick(this.createObject);
     },
-    visible(newState, oldState) {
+    visible(newState) {
       if (newState) this.show();
       else this.hide();
     }
