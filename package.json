@@ -1,8 +1,15 @@
 {
   "name": "vue-ros3djs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Vue components for ros3djs",
-  "keywords": ["vue", "vuejs", "ros", "rviz", "ros3d", "ros3djs"],
+  "keywords": [
+    "vue",
+    "vuejs",
+    "ros",
+    "rviz",
+    "ros3d",
+    "ros3djs"
+  ],
   "author": "Ludwig Waffenschmidt <l.waffenschmidt@wzl.rwth-aachen.de>",
   "main": "dist/vue-ros3djs.ssr.js",
   "module": "dist/vue-ros3djs.esm.js",
@@ -21,7 +28,7 @@
   "dependencies": {
     "@tweenjs/tween.js": "^18.3.2",
     "ros3d": "^1.0.1",
-    "three": "^0.110.0"
+    "three": "^0.89.0"
   },
   "devDependencies": {
     "cross-env": "^6.0.3",
