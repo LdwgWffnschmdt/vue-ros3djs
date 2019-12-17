@@ -1,6 +1,6 @@
 {
   "name": "vue-ros3djs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Vue components for ros3djs",
   "keywords": [
     "vue",

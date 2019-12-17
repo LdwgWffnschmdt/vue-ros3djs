@@ -103,7 +103,7 @@ var script = {
       ros : this.$parent.ros,
       tfClient : this.$parent.tfClient,
       rootObject : this.$parent.viewer.scene,
-      origin : this.position,
+      origin : new THREE.Vector3(this.x || 0, this.y || 0, this.z || 0),
       direction : new Three.Vector3(this.directionX || 0, this.directionY || 0, this.directionZ || 0),
       length : this.length,
       headLength : this.headLength,
@@ -202,7 +202,7 @@ var __vue_staticRenderFns__ = [];
   /* scoped */
   var __vue_scope_id__ = undefined;
   /* module identifier */
-  var __vue_module_identifier__ = "data-v-4a1d1920";
+  var __vue_module_identifier__ = "data-v-6111ada9";
   /* functional template */
   var __vue_is_functional_template__ = false;
   /* style inject */

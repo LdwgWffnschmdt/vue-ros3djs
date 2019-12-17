@@ -15,34 +15,9 @@ export default {
       default: true,
       require: false,
     },
-    x: {
-      type: Number,
-      default: 0,
-      require: false,
-    },
-    y: {
-      type: Number,
-      default: 0,
-      require: false,
-    },
-    z: {
-      type: Number,
-      default: 0,
-      require: false,
-    },
-    directionX: {
-      type: Number,
-      default: 1,
-      require: false,
-    },
-    directionY: {
-      type: Number,
-      default: 0,
-      require: false,
-    },
-    directionZ: {
-      type: Number,
-      default: 0,
+    pose: {
+      type: Object,
+      default: undefined,
       require: false,
     },
     length: {
@@ -75,12 +50,7 @@ export default {
     color(n) {
       this.object.material.color.set(n);
     },
-    x() { this.$nextTick(this.setPosition) },
-    y() { this.$nextTick(this.setPosition) },
-    z() { this.$nextTick(this.setPosition) },
-    directionX() { this.$nextTick(this.setDirection) },
-    directionY() { this.$nextTick(this.setDirection) },
-    directionZ() { this.$nextTick(this.setDirection) },
+    pose() { this.$nextTick(this.setPose) },
     length(n) {
       this.object.setLength(n);
     },
@@ -97,11 +67,17 @@ export default {
       var obj = this.$parent.viewer.scene.getObjectByName(this._uid);
       if (obj != null) this.$parent.viewer.scene.remove(obj);
     },
-    setPosition() {
-      this.object.position.set(this.x, this.y, this.z);
-    },
-    setDirection() {
-      this.object.setDirection(new Three.Vector3(this.directionX || 0, this.directionY || 0, this.directionZ || 0));
+    setPose() {
+      if (this.pose == undefined) return;
+
+      this.object.position.set(this.pose.position.x, this.pose.position.y, this.pose.position.z);
+
+      var rot = new THREE.Quaternion(this.pose.orientation.x, this.pose.orientation.y,
+                                     this.pose.orientation.z, this.pose.orientation.w);
+      var direction = new THREE.Vector3(1,0,0);
+      direction.applyQuaternion(rot);
+
+      this.object.setDirection(direction);
     }
   },
   mounted() {
@@ -109,8 +85,6 @@ export default {
       ros : this.$parent.ros,
       tfClient : this.$parent.tfClient,
       rootObject : this.$parent.viewer.scene,
-      origin : new THREE.Vector3(this.x || 0, this.y || 0, this.z || 0),
-      direction : new Three.Vector3(this.directionX || 0, this.directionY || 0, this.directionZ || 0),
       length : this.length,
       headLength : this.headLength,
       shaftDiameter : this.shaftDiameter,
@@ -118,6 +92,9 @@ export default {
       material : new Three.MeshBasicMaterial({color: this.color}),
     });
     this.object.name = this._uid;
+
+    this.setPose();
+
     if (this.visible) this.show();
   },
   beforeDestroy() {
