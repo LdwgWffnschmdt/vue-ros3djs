@@ -7,7 +7,7 @@ import * as ROS3D from 'ros3d'
 import * as Three from 'three'
 
 export default {
-  name: 'ros3d-arrow',
+  name: 'ros3d-pose-arrow',
   inheritAttrs: false,
   props: {
     visible: {
