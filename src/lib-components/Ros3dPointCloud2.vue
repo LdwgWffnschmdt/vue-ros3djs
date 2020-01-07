@@ -6,7 +6,7 @@
 import * as ROS3D from 'ros3d'
 
 export default {
-  name: 'ros3d-laser-scan',
+  name: 'ros3d-point-cloud2',
   props: {
     visible: {
       type: Boolean,
@@ -15,7 +15,7 @@ export default {
     },
     topic: {
       type: String,
-      default: '/scan',
+      default: '/points',
       require: false,
     },
     compression: {
@@ -36,6 +36,16 @@ export default {
     messageRatio: {
       type: Number,
       default: 1,
+      require: false,
+    },
+    colorsrc: {
+      type: String,
+      default: "rgb",
+      require: false,
+    },
+    colormap: {
+      type: Object,
+      default: undefined,
       require: false,
     },
     color: {
@@ -70,6 +80,12 @@ export default {
     messageRatio() {
       this.$nextTick(this.createObject);
     },
+    colorsrc() {
+      this.$nextTick(this.createObject);
+    },
+    colormap() {
+      this.$nextTick(this.createObject);
+    },
     color() {
       this.$nextTick(this.createObject);
     },
@@ -89,8 +105,8 @@ export default {
     createObject() {
       if (this.object != null) this.hide();
 
-      // Setup the laser scan.
-      this.object = new ROS3D.LaserScan({
+      // Setup the point cloud.
+      this.object = new ROS3D.PointCloud2({
         ros : this.$parent.ros,
         tfClient : this.$parent.tfClient,
         rootObject : this.$parent.viewer.scene,

@@ -581,6 +581,21 @@ var script$4 = {
       default: 'cbor',
       require: false,
     },
+    max_pts: {
+      type: Number,
+      default: 10000,
+      require: false,
+    },
+    pointRatio: {
+      type: Number,
+      default: 1,
+      require: false,
+    },
+    messageRatio: {
+      type: Number,
+      default: 1,
+      require: false,
+    },
     color: {
       type: String,
       default: "#ff0000",
@@ -593,6 +608,10 @@ var script$4 = {
     }
   },
   watch: {
+    visible: function visible(newState) {
+      if (newState) { this.show(); }
+      else { this.hide(); }
+    },
     topic: function topic(n) {
       this.object.unsubscribe();
       this.object.topicName = n;
@@ -603,15 +622,17 @@ var script$4 = {
       this.object.compression = n;
       this.object.subscribe();
     },
+    max_pts: function max_pts() {
+      this.$nextTick(this.createObject);
+    },
+    messageRatio: function messageRatio() {
+      this.$nextTick(this.createObject);
+    },
     color: function color() {
       this.$nextTick(this.createObject);
     },
     particleSize: function particleSize() {
       this.$nextTick(this.createObject);
-    },
-    visible: function visible(newState) {
-      if (newState) { this.show(); }
-      else { this.hide(); }
     }
   },
   methods: {
@@ -632,6 +653,10 @@ var script$4 = {
         tfClient : this.$parent.tfClient,
         rootObject : this.$parent.viewer.scene,
         topic: this.topic,
+        compression: this.compression,
+        max_pts: this.max_pts,
+        pointRatio: this.pointRatio,
+        messageRatio: this.messageRatio,
         material: {
           color: this.color,
           size: this.particleSize
@@ -660,7 +685,7 @@ var __vue_staticRenderFns__$4 = [];
   /* scoped */
   var __vue_scope_id__$4 = undefined;
   /* module identifier */
-  var __vue_module_identifier__$4 = "data-v-62e2101c";
+  var __vue_module_identifier__$4 = "data-v-54f16ded";
   /* functional template */
   var __vue_is_functional_template__$4 = false;
   /* style inject */
@@ -978,6 +1003,168 @@ var __vue_staticRenderFns__$7 = [];
   );//
 
 var script$8 = {
+  name: 'ros3d-point-cloud2',
+  props: {
+    visible: {
+      type: Boolean,
+      default: true,
+      require: false,
+    },
+    topic: {
+      type: String,
+      default: '/points',
+      require: false,
+    },
+    compression: {
+      type: String,
+      default: 'cbor',
+      require: false,
+    },
+    max_pts: {
+      type: Number,
+      default: 10000,
+      require: false,
+    },
+    pointRatio: {
+      type: Number,
+      default: 1,
+      require: false,
+    },
+    messageRatio: {
+      type: Number,
+      default: 1,
+      require: false,
+    },
+    colorsrc: {
+      type: String,
+      default: "rgb",
+      require: false,
+    },
+    colormap: {
+      type: Object,
+      default: undefined,
+      require: false,
+    },
+    color: {
+      type: String,
+      default: "#ff0000",
+      require: false,
+    },
+    particleSize: {
+      type: Number,
+      default: 0.25,
+      require: false,
+    }
+  },
+  watch: {
+    visible: function visible(newState) {
+      if (newState) { this.show(); }
+      else { this.hide(); }
+    },
+    topic: function topic(n) {
+      this.object.unsubscribe();
+      this.object.topicName = n;
+      this.object.subscribe();
+    },
+    compression: function compression(n) {
+      this.object.unsubscribe();
+      this.object.compression = n;
+      this.object.subscribe();
+    },
+    max_pts: function max_pts() {
+      this.$nextTick(this.createObject);
+    },
+    messageRatio: function messageRatio() {
+      this.$nextTick(this.createObject);
+    },
+    colorsrc: function colorsrc() {
+      this.$nextTick(this.createObject);
+    },
+    colormap: function colormap() {
+      this.$nextTick(this.createObject);
+    },
+    color: function color() {
+      this.$nextTick(this.createObject);
+    },
+    particleSize: function particleSize() {
+      this.$nextTick(this.createObject);
+    }
+  },
+  methods: {
+    show: function show() {
+      this.object.subscribe();
+      if (this.object.points.sn != null) { this.$parent.viewer.scene.add(this.object.points.sn); }
+    },
+    hide: function hide() {
+      this.object.unsubscribe();
+      if (this.object.points.sn != null) { this.$parent.viewer.scene.remove(this.object.points.sn); }
+    },
+    createObject: function createObject() {
+      if (this.object != null) { this.hide(); }
+
+      // Setup the point cloud.
+      this.object = new ROS3D.PointCloud2({
+        ros : this.$parent.ros,
+        tfClient : this.$parent.tfClient,
+        rootObject : this.$parent.viewer.scene,
+        topic: this.topic,
+        compression: this.compression,
+        max_pts: this.max_pts,
+        pointRatio: this.pointRatio,
+        messageRatio: this.messageRatio,
+        material: {
+          color: this.color,
+          size: this.particleSize
+        }
+      });
+      this.object.name = this._uid;
+      if (!this.visible) { this.hide(); }
+    }
+  },
+  mounted: function mounted() {
+    this.createObject();
+  },
+  beforeDestroy: function beforeDestroy() {
+    this.object.unsubscribe();
+    this.hide();
+  }
+};/* script */
+var __vue_script__$8 = script$8;
+
+/* template */
+var __vue_render__$8 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[])};
+var __vue_staticRenderFns__$8 = [];
+
+  /* style */
+  var __vue_inject_styles__$8 = undefined;
+  /* scoped */
+  var __vue_scope_id__$8 = undefined;
+  /* module identifier */
+  var __vue_module_identifier__$8 = "data-v-a8c97aec";
+  /* functional template */
+  var __vue_is_functional_template__$8 = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+  /* style inject shadow dom */
+  
+
+  
+  var Ros3dPointCloud2 = normalizeComponent(
+    { render: __vue_render__$8, staticRenderFns: __vue_staticRenderFns__$8 },
+    __vue_inject_styles__$8,
+    __vue_script__$8,
+    __vue_scope_id__$8,
+    __vue_is_functional_template__$8,
+    __vue_module_identifier__$8,
+    false,
+    undefined,
+    undefined,
+    undefined
+  );//
+
+var script$9 = {
   name: 'ros3d-pose-arrow',
   inheritAttrs: false,
   props: {
@@ -1072,20 +1259,20 @@ var script$8 = {
     this.hide();
   }
 };/* script */
-var __vue_script__$8 = script$8;
+var __vue_script__$9 = script$9;
 
 /* template */
-var __vue_render__$8 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[])};
-var __vue_staticRenderFns__$8 = [];
+var __vue_render__$9 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[])};
+var __vue_staticRenderFns__$9 = [];
 
   /* style */
-  var __vue_inject_styles__$8 = undefined;
+  var __vue_inject_styles__$9 = undefined;
   /* scoped */
-  var __vue_scope_id__$8 = undefined;
+  var __vue_scope_id__$9 = undefined;
   /* module identifier */
-  var __vue_module_identifier__$8 = "data-v-0f16421e";
+  var __vue_module_identifier__$9 = "data-v-0f16421e";
   /* functional template */
-  var __vue_is_functional_template__$8 = false;
+  var __vue_is_functional_template__$9 = false;
   /* style inject */
   
   /* style inject SSR */
@@ -1095,19 +1282,19 @@ var __vue_staticRenderFns__$8 = [];
 
   
   var Ros3dPoseArrow = normalizeComponent(
-    { render: __vue_render__$8, staticRenderFns: __vue_staticRenderFns__$8 },
-    __vue_inject_styles__$8,
-    __vue_script__$8,
-    __vue_scope_id__$8,
-    __vue_is_functional_template__$8,
-    __vue_module_identifier__$8,
+    { render: __vue_render__$9, staticRenderFns: __vue_staticRenderFns__$9 },
+    __vue_inject_styles__$9,
+    __vue_script__$9,
+    __vue_scope_id__$9,
+    __vue_is_functional_template__$9,
+    __vue_module_identifier__$9,
     false,
     undefined,
     undefined,
     undefined
   );//
 
-var script$9 = {
+var script$a = {
   name: 'ros3d-scene-node',
   props: {
     visible: {
@@ -1166,20 +1353,20 @@ var script$9 = {
     this.hide();
   }
 };/* script */
-var __vue_script__$9 = script$9;
+var __vue_script__$a = script$a;
 
 /* template */
-var __vue_render__$9 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[])};
-var __vue_staticRenderFns__$9 = [];
+var __vue_render__$a = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[])};
+var __vue_staticRenderFns__$a = [];
 
   /* style */
-  var __vue_inject_styles__$9 = undefined;
+  var __vue_inject_styles__$a = undefined;
   /* scoped */
-  var __vue_scope_id__$9 = undefined;
+  var __vue_scope_id__$a = undefined;
   /* module identifier */
-  var __vue_module_identifier__$9 = "data-v-456d291d";
+  var __vue_module_identifier__$a = "data-v-456d291d";
   /* functional template */
-  var __vue_is_functional_template__$9 = false;
+  var __vue_is_functional_template__$a = false;
   /* style inject */
   
   /* style inject SSR */
@@ -1189,19 +1376,19 @@ var __vue_staticRenderFns__$9 = [];
 
   
   var Ros3dSceneNode = normalizeComponent(
-    { render: __vue_render__$9, staticRenderFns: __vue_staticRenderFns__$9 },
-    __vue_inject_styles__$9,
-    __vue_script__$9,
-    __vue_scope_id__$9,
-    __vue_is_functional_template__$9,
-    __vue_module_identifier__$9,
+    { render: __vue_render__$a, staticRenderFns: __vue_staticRenderFns__$a },
+    __vue_inject_styles__$a,
+    __vue_script__$a,
+    __vue_scope_id__$a,
+    __vue_is_functional_template__$a,
+    __vue_module_identifier__$a,
     false,
     undefined,
     undefined,
     undefined
   );//
 
-var script$a = {
+var script$b = {
   name: 'ros3d-viewer',
   props: {
     ros: {
@@ -1479,20 +1666,20 @@ var script$a = {
     }
   }
 };/* script */
-var __vue_script__$a = script$a;
+var __vue_script__$b = script$b;
 
 /* template */
-var __vue_render__$a = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[(_vm.loaded)?_vm._t("default"):_vm._e()],2)};
-var __vue_staticRenderFns__$a = [];
+var __vue_render__$b = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[(_vm.loaded)?_vm._t("default"):_vm._e()],2)};
+var __vue_staticRenderFns__$b = [];
 
   /* style */
-  var __vue_inject_styles__$a = undefined;
+  var __vue_inject_styles__$b = undefined;
   /* scoped */
-  var __vue_scope_id__$a = undefined;
+  var __vue_scope_id__$b = undefined;
   /* module identifier */
-  var __vue_module_identifier__$a = "data-v-7b20e75c";
+  var __vue_module_identifier__$b = "data-v-7b20e75c";
   /* functional template */
-  var __vue_is_functional_template__$a = false;
+  var __vue_is_functional_template__$b = false;
   /* style inject */
   
   /* style inject SSR */
@@ -1502,17 +1689,17 @@ var __vue_staticRenderFns__$a = [];
 
   
   var Ros3dViewer = normalizeComponent(
-    { render: __vue_render__$a, staticRenderFns: __vue_staticRenderFns__$a },
-    __vue_inject_styles__$a,
-    __vue_script__$a,
-    __vue_scope_id__$a,
-    __vue_is_functional_template__$a,
-    __vue_module_identifier__$a,
+    { render: __vue_render__$b, staticRenderFns: __vue_staticRenderFns__$b },
+    __vue_inject_styles__$b,
+    __vue_script__$b,
+    __vue_scope_id__$b,
+    __vue_is_functional_template__$b,
+    __vue_module_identifier__$b,
     false,
     undefined,
     undefined,
     undefined
-  );/* eslint-disable import/prefer-default-export */var components=/*#__PURE__*/Object.freeze({__proto__:null,Ros3dArrow: Ros3dArrow,Ros3dAxes: Ros3dAxes,Ros3dGrid: Ros3dGrid,Ros3dInteractiveMarkerClient: Ros3dInteractiveMarkerClient,Ros3dLaserScan: Ros3dLaserScan,Ros3dMarkerClient: Ros3dMarkerClient,Ros3dOccupancyGridClient: Ros3dOccupancyGridClient,Ros3dPath: Ros3dPath,Ros3dPoseArrow: Ros3dPoseArrow,Ros3dSceneNode: Ros3dSceneNode,Ros3dViewer: Ros3dViewer});// Import vue components
+  );/* eslint-disable import/prefer-default-export */var components=/*#__PURE__*/Object.freeze({__proto__:null,Ros3dArrow: Ros3dArrow,Ros3dAxes: Ros3dAxes,Ros3dGrid: Ros3dGrid,Ros3dInteractiveMarkerClient: Ros3dInteractiveMarkerClient,Ros3dLaserScan: Ros3dLaserScan,Ros3dMarkerClient: Ros3dMarkerClient,Ros3dOccupancyGridClient: Ros3dOccupancyGridClient,Ros3dPath: Ros3dPath,Ros3dPointCloud2: Ros3dPointCloud2,Ros3dPoseArrow: Ros3dPoseArrow,Ros3dSceneNode: Ros3dSceneNode,Ros3dViewer: Ros3dViewer});// Import vue components
 
 // install function executed by Vue.use()
 function install(Vue) {
@@ -1538,4 +1725,4 @@ if (typeof window !== 'undefined') {
 }
 if (GlobalVue) {
   GlobalVue.use(plugin);
-}exports.Ros3dArrow=Ros3dArrow;exports.Ros3dAxes=Ros3dAxes;exports.Ros3dGrid=Ros3dGrid;exports.Ros3dInteractiveMarkerClient=Ros3dInteractiveMarkerClient;exports.Ros3dLaserScan=Ros3dLaserScan;exports.Ros3dMarkerClient=Ros3dMarkerClient;exports.Ros3dOccupancyGridClient=Ros3dOccupancyGridClient;exports.Ros3dPath=Ros3dPath;exports.Ros3dPoseArrow=Ros3dPoseArrow;exports.Ros3dSceneNode=Ros3dSceneNode;exports.Ros3dViewer=Ros3dViewer;exports.default=plugin;
+}exports.Ros3dArrow=Ros3dArrow;exports.Ros3dAxes=Ros3dAxes;exports.Ros3dGrid=Ros3dGrid;exports.Ros3dInteractiveMarkerClient=Ros3dInteractiveMarkerClient;exports.Ros3dLaserScan=Ros3dLaserScan;exports.Ros3dMarkerClient=Ros3dMarkerClient;exports.Ros3dOccupancyGridClient=Ros3dOccupancyGridClient;exports.Ros3dPath=Ros3dPath;exports.Ros3dPointCloud2=Ros3dPointCloud2;exports.Ros3dPoseArrow=Ros3dPoseArrow;exports.Ros3dSceneNode=Ros3dSceneNode;exports.Ros3dViewer=Ros3dViewer;exports.default=plugin;
