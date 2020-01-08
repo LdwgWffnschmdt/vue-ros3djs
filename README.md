@@ -25,9 +25,6 @@ Includes the following conponents:
 ## Usage
 
 ```javascript
-
-
-
 <template>
   <ros3d-viewer :ros="ros" v-if="connected">
     <ros3d-axes />
@@ -64,5 +61,4 @@ export default {
   }
 }
 </script>
-
 ```
