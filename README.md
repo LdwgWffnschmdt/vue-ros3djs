@@ -7,6 +7,21 @@ Vue components for [ros3djs](http://wiki.ros.org/ros3djs)
 npm install --save vue-ros3djs
 ```
 
+## Components
+Includes the following conponents:
+- Ros3dArrow
+- Ros3dAxes
+- Ros3dGrid
+- Ros3dInteractiveMarkerClient
+- Ros3dLaserScan
+- Ros3dMarkerClient
+- Ros3dOccupancyGridClient
+- Ros3dPath
+- Ros3dPointCloud2
+- Ros3dPoseArrow
+- Ros3dSceneNode
+- Ros3dViewer
+
 ## Usage
 
 ```javascript
