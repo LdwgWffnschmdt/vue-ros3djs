@@ -2,6 +2,11 @@
   "name": "vue-ros3djs",
   "version": "1.0.7",
   "description": "Vue components for ros3djs",
+  "homepage": "https://github.com/LdwgWffnschmdt/vue-ros3djs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LdwgWffnschmdt/vue-ros3djs"
+  },
   "keywords": [
     "vue",
     "vuejs",
@@ -10,7 +15,7 @@
     "ros3d",
     "ros3djs"
   ],
-  "author": "Ludwig Waffenschmidt <l.waffenschmidt@wzl.rwth-aachen.de>",
+  "author": "Ludwig Waffenschmidt <ludwig.waffenschmidt@outlook.com>",
   "main": "dist/vue-ros3djs.ssr.js",
   "module": "dist/vue-ros3djs.esm.js",
   "unpkg": "dist/vue-ros3djs.min.js",
@@ -26,20 +31,20 @@
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
   },
   "dependencies": {
-    "@tweenjs/tween.js": "^18.3.2",
+    "@tweenjs/tween.js": "^18.5.0",
     "ros3d": "^1.0.1",
     "three": "^0.89.0"
   },
   "devDependencies": {
     "cross-env": "^6.0.3",
     "minimist": "^1.2.0",
-    "rollup": "^1.26.1",
+    "rollup": "^1.28.0",
     "rollup-plugin-buble": "^0.19.8",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-replace": "^2.2.0",
-    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-terser": "^5.1.3",
     "rollup-plugin-vue": "5.1.1",
-    "vue": "^2.6.10",
-    "vue-template-compiler": "^2.6.10"
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11"
   }
 }
