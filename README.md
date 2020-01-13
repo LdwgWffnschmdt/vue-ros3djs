@@ -1,6 +1,10 @@
 # vue-ros3djs
 
-Vue components for [ros3djs](http://wiki.ros.org/ros3djs)
+![](screenshot.png)
+
+Vue components for [ros3djs](http://wiki.ros.org/ros3djs) with some extra functionality:
+- Get pose of right click / long press
+- [tween.js](https://github.com/tweenjs/tween.js/) integration for smooth transitions
 
 ## Install
 ```
@@ -8,19 +12,19 @@ npm install --save vue-ros3djs
 ```
 
 ## Components
-Includes the following conponents:
-- Ros3dArrow
-- Ros3dAxes
-- Ros3dGrid
-- Ros3dInteractiveMarkerClient
-- Ros3dLaserScan
-- Ros3dMarkerClient
-- Ros3dOccupancyGridClient
-- Ros3dPath
-- Ros3dPointCloud2
-- Ros3dPoseArrow
-- Ros3dSceneNode
-- Ros3dViewer
+Includes the following components:
+- **Ros3dArrow**
+- **Ros3dAxes**
+- **Ros3dGrid**
+- **Ros3dInteractiveMarkerClient**
+- **Ros3dLaserScan**
+- **Ros3dMarkerClient**
+- **Ros3dOccupancyGridClient**
+- **Ros3dPath**
+- **Ros3dPointCloud2**
+- **Ros3dPoseArrow**
+- **Ros3dSceneNode**
+- **Ros3dViewer**
 
 ## Usage
 

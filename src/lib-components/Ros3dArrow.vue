@@ -109,7 +109,7 @@ export default {
       ros : this.$parent.ros,
       tfClient : this.$parent.tfClient,
       rootObject : this.$parent.viewer.scene,
-      origin : new THREE.Vector3(this.x || 0, this.y || 0, this.z || 0),
+      origin : new Three.Vector3(this.x || 0, this.y || 0, this.z || 0),
       direction : new Three.Vector3(this.directionX || 0, this.directionY || 0, this.directionZ || 0),
       length : this.length,
       headLength : this.headLength,

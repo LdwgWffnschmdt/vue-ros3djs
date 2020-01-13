@@ -13,7 +13,7 @@
 
 <script>
 import ROSLIB from 'roslib';
-import { Ros3dViewer, Ros3dGrid, Ros3dAxes } from './entry';
+import { Ros3dViewer, Ros3dGrid, Ros3dAxes } from './plugin';
 
 export default {
   name:  'VueRos3djsLibDev', // vue library dev component

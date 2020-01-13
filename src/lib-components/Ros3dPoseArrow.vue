@@ -72,9 +72,9 @@ export default {
 
       this.object.position.set(this.pose.position.x, this.pose.position.y, this.pose.position.z);
 
-      var rot = new THREE.Quaternion(this.pose.orientation.x, this.pose.orientation.y,
+      var rot = new Three.Quaternion(this.pose.orientation.x, this.pose.orientation.y,
                                      this.pose.orientation.z, this.pose.orientation.w);
-      var direction = new THREE.Vector3(1,0,0);
+      var direction = new Three.Vector3(1,0,0);
       direction.applyQuaternion(rot);
 
       this.object.setDirection(direction);
