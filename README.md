@@ -11,6 +11,8 @@ Vue components for [ros3djs](http://wiki.ros.org/ros3djs) with some extra functi
 npm install --save vue-ros3djs
 ```
 
+## [Documentation](https://ldwgwffnschmdt.github.io/vue-ros3djs/)
+
 ## Components
 Includes the following components:
 - **Ros3dArrow**
