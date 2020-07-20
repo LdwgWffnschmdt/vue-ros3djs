@@ -4,7 +4,7 @@
         "dictionaries": ["jsdoc"]
     },
     "source": {
-        "include": ["lib", "package.json", "README.md"],
+        "include": ["src/lib-components", "package.json", "README.md"],
         "includePattern": ".js$",
         "excludePattern": "(node_modules/|docs)"
     },
@@ -18,7 +18,7 @@
         "showInheritedInNav": true
     },
     "opts": {
-        "destination": "./docs/",
+        "destination": "./out/",
         "encoding": "utf8",
         "private": true,
         "recurse": true,
