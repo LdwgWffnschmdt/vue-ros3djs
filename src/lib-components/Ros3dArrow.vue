@@ -3,9 +3,32 @@
 </template>
 
 <script>
+/**
+ * @author Ludwig Waffenschmidt - ludwig.waffenschmidt@outlook.com
+ */
+
 import * as ROS3D from 'ros3d'
 import * as Three from 'three'
 
+/**
+ * An Arrow is a THREE object that can be used to display an arrow model.
+ * It is a wrapper for [`ROS3D.Arrow`]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Arrow.html}.
+ * 
+ * @vue-prop {Boolean} [visible=true] - Visibility of this object
+ * @vue-prop {Number} [x=0] - Origin x
+ * @vue-prop {Number} [y=0] - Origin y
+ * @vue-prop {Number} [z=0] - Origin z
+ * @vue-prop {Number} [directionX=1] - Direction x
+ * @vue-prop {Number} [directionY=0] - Direction y
+ * @vue-prop {Number} [directionZ=0] - Direction z
+ * @vue-prop {Number} length (optional) - the length of the arrow
+ * @vue-prop {Number} [headLength=1] - The head length of the arrow
+ * @vue-prop {Number} [shaftDiameter=0.2] - The shaft diameter of the arrow
+ * @vue-prop {Number} [headDiameter=0.05] - The head diameter of the arrow
+ * @vue-prop {String} [color=#00ff00] - The color to use for this arrow
+ * 
+ * @vue-data {ROS3D.Arrow} object - Handle for the internal [ROS3D.Arrow]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Arrow.html}
+ */
 export default {
   name: 'ros3d-arrow',
   inheritAttrs: false,

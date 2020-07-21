@@ -3,8 +3,22 @@
 </template>
 
 <script>
+/**
+ * @author Ludwig Waffenschmidt - ludwig.waffenschmidt@outlook.com
+ */
+
 import * as ROS3D from 'ros3d'
 
+/**
+ * A Path client that listens to a given topic and displays a line connecting the poses.
+ * It is a wrapper for [`ROS3D.Path`]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Path.html}.
+ * 
+ * @vue-prop {Boolean} [visible=true] - Visibility of this object
+ * @vue-prop {String} [topic=] - The path topic to listen to
+ * @vue-prop {String} [color=#009688] - The color to use for this arrow
+ * 
+ * @vue-data {ROS3D.Path} object - Handle for the internal [ROS3D.Path]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Path.html}
+ */
 export default {
   name: 'ros3d-path',
   props: {

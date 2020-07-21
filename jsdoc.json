@@ -4,21 +4,22 @@
         "dictionaries": ["jsdoc"]
     },
     "source": {
-        "include": ["src/lib-components", "package.json", "README.md"],
-        "includePattern": ".js$",
+        "include": ["src/lib-components", "README.md"],
+        "includePattern": "\\.(vue|js)$",
         "excludePattern": "(node_modules/|docs)"
     },
     "plugins": [
-        "plugins/markdown"
+        "plugins/markdown",
+        "node_modules/jsdoc-vuejs"
     ],
     "templates": {
-        "cleverLinks": false,
+        "cleverLinks": true,
         "monospaceLinks": true,
         "useLongnameInNav": false,
         "showInheritedInNav": true
     },
     "opts": {
-        "destination": "./out/",
+        "destination": "./doc/",
         "encoding": "utf8",
         "private": true,
         "recurse": true,

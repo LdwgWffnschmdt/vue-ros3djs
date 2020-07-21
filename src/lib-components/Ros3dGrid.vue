@@ -3,8 +3,24 @@
 </template>
 
 <script>
+/**
+ * @author Ludwig Waffenschmidt - ludwig.waffenschmidt@outlook.com
+ */
+
 import * as ROS3D from 'ros3d'
 
+/**
+ * Create a grid object.
+ * It is a wrapper for [`ROS3D.Grid`]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Grid.html}.
+ * 
+ * @vue-prop {Boolean} [visible=true] - Visibility of this object
+ * @vue-prop {Number} [numCells=10] - The number of cells of the grid
+ * @vue-prop {Number} [lineWidth=1] - The width of the lines in the grid
+ * @vue-prop {Number} [cellSize=1] - The length, in meters, of the side of each cell
+ * @vue-prop {String} [color=#cccccc] - The line color of the grid
+ * 
+ * @vue-data {ROS3D.Grid} object - Handle for the internal [ROS3D.Grid]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Grid.html}
+ */
 export default {
   name: 'ros3d-grid',
   props: {

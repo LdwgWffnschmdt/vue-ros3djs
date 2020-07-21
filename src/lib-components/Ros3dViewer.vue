@@ -6,6 +6,10 @@
 </template>
 
 <script>
+/**
+ * @author Ludwig Waffenschmidt - ludwig.waffenschmidt@outlook.com
+ */
+
 import TWEEN from '@tweenjs/tween.js'
 
 import * as ROS3D from 'ros3d'
@@ -17,6 +21,28 @@ import * as Three from 'three'
 
 import { setTimeout, clearTimeout } from 'timers';
 
+/**
+ * @typedef {Object} TouchResult
+ * @property {ROSLIB.Pose} pose - [`ROSLIB.Pose`]{@link http://robotwebtools.org/jsdoc/roslibjs/current/Pose.html} object relative to the `fixedFrame` TF frame
+ * @property {number[]} screenPosition - X and Y coordinates on the screen
+ */
+
+/**
+ * This is the root object all others are placed in.
+ * It is more or less a wrapper for [`ROS3D.Viewer`]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Viewer.html} with some additional logic for right-click/long-press handling and already integrates [`ROSLIB.TFClient`]{@link http://robotwebtools.org/jsdoc/roslibjs/current/TFClient.html}.
+ * 
+ * @vue-prop {ROSLIB.Ros} ros - [ROSLIB.Ros]{@link http://robotwebtools.org/jsdoc/roslibjs/current/Ros.html} connection handle
+ * @vue-prop {String} [background=#7e7e7e] - The color to render the background, like '#efefef'
+ * @vue-prop {Boolean} [antialias=true] - If antialiasing should be used
+ * @vue-prop {String} [fixedFrame=/map] - The fixed base frame for the tf listener
+ * @vue-prop {Number} [longPressTolerance=15] - Tolerance in pixels for finger movement during long-press
+ * @vue-prop {Number} [longPressDuration=750] - Duration for long-press in milliseconds
+ * 
+ * @vue-data {ROS3D.Viewer} viewer - Handle for the internal [ROS3D.Viewer]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Viewer.html}
+ * @vue-data {ROSLIB.TFClient} tfClient - Handle for the internal [ROSLIB.TFClient]{@link http://robotwebtools.org/jsdoc/roslibjs/current/TFClient.html}
+ * 
+ * @vue-event {TouchResult} touch - Emitted on right-click or long-press. {@link TouchResult}
+ */
 export default {
   name: 'ros3d-viewer',
   props: {
@@ -29,14 +55,14 @@ export default {
       default: '#7e7e7e',
       require: false,
     },
-    fixedFrame: {
-      type: String,
-      default: '/map',
-      require: false,
-    },
     antialias: {
       type: Boolean,
       default: true,
+      require: false,
+    },
+    fixedFrame: {
+      type: String,
+      default: '/map',
       require: false,
     },
     longPressTolerance: {

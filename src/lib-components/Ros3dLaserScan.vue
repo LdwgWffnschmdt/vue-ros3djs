@@ -3,8 +3,26 @@
 </template>
 
 <script>
+/**
+ * @author Ludwig Waffenschmidt - ludwig.waffenschmidt@outlook.com
+ */
+
 import * as ROS3D from 'ros3d'
 
+/**
+ * A LaserScan client that listens to a given topic and displays the points.
+ * It is a wrapper for [`ROS3D.LaserScan`]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.LaserScan.html}.
+ * 
+ * @vue-prop {Boolean} [visible=true] - Visibility of this object
+ * @vue-prop {String} [topic=/scan] - The marker topic to listen to
+ * @vue-prop {String} [compression=cbor] - Message compression
+ * @vue-prop {Number} [max_pts=10000] - Number of points to draw
+ * @vue-prop {Number} [pointRatio=1] - Point subsampling ratio (default: 1, no subsampling)
+ * @vue-prop {Number} [messageRatio=1] - Message  subsampling ratio (default: 1, no subsampling)
+ * @vue-prop {String} [color=#ff0000] - The color for the laser scan points
+ * 
+ * @vue-data {ROS3D.LaserScan} object - Handle for the internal [ROS3D.LaserScan]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.LaserScan.html}
+ */
 export default {
   name: 'ros3d-laser-scan',
   props: {

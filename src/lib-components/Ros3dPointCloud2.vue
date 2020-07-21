@@ -3,8 +3,29 @@
 </template>
 
 <script>
+/**
+ * @author Ludwig Waffenschmidt - ludwig.waffenschmidt@outlook.com
+ */
+
 import * as ROS3D from 'ros3d'
 
+/**
+ * A Path client that listens to a given topic and displays a line connecting the poses.
+ * It is a wrapper for [`ROS3D.PointCloud2`]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.PointCloud2.html}.
+ * 
+ * @vue-prop {Boolean} [visible=true] - Visibility of this object
+ * @vue-prop {String} [topic=/points] - The PointCloud2 topic to listen to
+ * @vue-prop {String} [compression=cbor] - Message compression
+ * @vue-prop {Number} [max_pts=10000] - Number of points to draw
+ * @vue-prop {Number} [pointRatio=1] - Point subsampling ratio (default: 1, no subsampling)
+ * @vue-prop {Number} [messageRatio=1] - Message  subsampling ratio (default: 1, no subsampling)
+ * @vue-prop {Number} [colorsrc=rgb] - The field to be used for coloring
+ * @vue-prop {Object} [colormap] - Function that turns the colorsrc field value to a color
+ * @vue-prop {Number} [particleSize=0.25] - Size of the particles
+ * @vue-prop {String} [color=#009688] - The color to use for the particles
+ * 
+ * @vue-data {ROS3D.PointCloud2} object - Handle for the internal [ROS3D.PointCloud2]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.PointCloud2.html}
+ */
 export default {
   name: 'ros3d-point-cloud2',
   props: {

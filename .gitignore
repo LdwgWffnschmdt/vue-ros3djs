@@ -5,6 +5,8 @@ node_modules
 
 package-lock.json
 
+doc
+
 # local env files
 .env.local
 .env.*.local

@@ -6274,12 +6274,12 @@ module.exports = ROSLIB;
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1dfb9b54-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dArrow.vue?vue&type=template&id=9f3e8e8e&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4a6848d5-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dArrow.vue?vue&type=template&id=64437f3a&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/lib-components/Ros3dArrow.vue?vue&type=template&id=9f3e8e8e&
+// CONCATENATED MODULE: ./src/lib-components/Ros3dArrow.vue?vue&type=template&id=64437f3a&
 
 // EXTERNAL MODULE: ./node_modules/ros3d/build/ros3d.esm.js
 var ros3d_esm = __webpack_require__("f9e9");
@@ -51881,9 +51881,32 @@ function CanvasRenderer() {
 //
 //
 
+/**
+ * @author Ludwig Waffenschmidt - ludwig.waffenschmidt@outlook.com
+ */
 
 
 
+
+/**
+ * An Arrow is a THREE object that can be used to display an arrow model.
+ * It is a wrapper for [`ROS3D.Arrow`]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Arrow.html}.
+ * 
+ * @vue-prop {Boolean} [visible=true] - Visibility of this object
+ * @vue-prop {Number} [x=0] - Origin x
+ * @vue-prop {Number} [y=0] - Origin y
+ * @vue-prop {Number} [z=0] - Origin z
+ * @vue-prop {Number} [directionX=1] - Direction x
+ * @vue-prop {Number} [directionY=0] - Direction y
+ * @vue-prop {Number} [directionZ=0] - Direction z
+ * @vue-prop {Number} length (optional) - the length of the arrow
+ * @vue-prop {Number} [headLength=1] - The head length of the arrow
+ * @vue-prop {Number} [shaftDiameter=0.2] - The shaft diameter of the arrow
+ * @vue-prop {Number} [headDiameter=0.05] - The head diameter of the arrow
+ * @vue-prop {String} [color=#00ff00] - The color to use for this arrow
+ * 
+ * @vue-data {ROS3D.Arrow} object - Handle for the internal [ROS3D.Arrow]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Arrow.html}
+ */
 /* harmony default export */ var Ros3dArrowvue_type_script_lang_js_ = ({
   name: 'ros3d-arrow',
   inheritAttrs: false,
@@ -52120,12 +52143,12 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var Ros3dArrow = (component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1dfb9b54-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dAxes.vue?vue&type=template&id=553449a9&
-var Ros3dAxesvue_type_template_id_553449a9_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
-var Ros3dAxesvue_type_template_id_553449a9_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4a6848d5-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dAxes.vue?vue&type=template&id=4d0b9b32&
+var Ros3dAxesvue_type_template_id_4d0b9b32_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
+var Ros3dAxesvue_type_template_id_4d0b9b32_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/lib-components/Ros3dAxes.vue?vue&type=template&id=553449a9&
+// CONCATENATED MODULE: ./src/lib-components/Ros3dAxes.vue?vue&type=template&id=4d0b9b32&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dAxes.vue?vue&type=script&lang=js&
 //
@@ -52133,8 +52156,29 @@ var Ros3dAxesvue_type_template_id_553449a9_staticRenderFns = []
 //
 //
 
+/**
+ * @author Ludwig Waffenschmidt - ludwig.waffenschmidt@outlook.com
+ */
 
 
+
+/**
+ * An Axes object can be used to display the axis of a particular coordinate frame.
+ * It is a wrapper for [`ROS3D.Axes`]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Axes.html}.
+ * 
+ * @vue-prop {Boolean} [visible=true] - Visibility of this object
+ * @vue-prop {Number} [x=0] - Origin x
+ * @vue-prop {Number} [y=0] - Origin y
+ * @vue-prop {Number} [z=0] - Origin z
+ * @vue-prop {Number} [scale=1] - The scale of the frame (defaults to 1.0)
+ * @vue-prop {Number} [lineType=full] - The line type for the axes. Supported line types: 'dashed' and 'full'.
+ * @vue-prop {Number} [lineDashLength=0.1] - The length of the dashes, relative to the length of the axis. Maximum value is 1, which means the dash length is equal to the length of the axis. Parameter only applies when lineType is set to dashed.
+ * @vue-prop {Number} [headLength=0.1] - The head length to render
+ * @vue-prop {Number} [shaftRadius=0.008] - The shaft radius to render
+ * @vue-prop {Number} [headRadius=0.023] - The head radius to render
+ * 
+ * @vue-data {ROS3D.Axes} object - Handle for the internal [ROS3D.Axes]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Axes.html}
+ */
 /* harmony default export */ var Ros3dAxesvue_type_script_lang_js_ = ({
   name: 'ros3d-axes',
   props: {
@@ -52254,8 +52298,8 @@ var Ros3dAxesvue_type_template_id_553449a9_staticRenderFns = []
 
 var Ros3dAxes_component = normalizeComponent(
   lib_components_Ros3dAxesvue_type_script_lang_js_,
-  Ros3dAxesvue_type_template_id_553449a9_render,
-  Ros3dAxesvue_type_template_id_553449a9_staticRenderFns,
+  Ros3dAxesvue_type_template_id_4d0b9b32_render,
+  Ros3dAxesvue_type_template_id_4d0b9b32_staticRenderFns,
   false,
   null,
   null,
@@ -52264,12 +52308,12 @@ var Ros3dAxes_component = normalizeComponent(
 )
 
 /* harmony default export */ var Ros3dAxes = (Ros3dAxes_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1dfb9b54-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dGrid.vue?vue&type=template&id=9d2ae974&
-var Ros3dGridvue_type_template_id_9d2ae974_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
-var Ros3dGridvue_type_template_id_9d2ae974_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4a6848d5-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dGrid.vue?vue&type=template&id=7c16b95a&
+var Ros3dGridvue_type_template_id_7c16b95a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
+var Ros3dGridvue_type_template_id_7c16b95a_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/lib-components/Ros3dGrid.vue?vue&type=template&id=9d2ae974&
+// CONCATENATED MODULE: ./src/lib-components/Ros3dGrid.vue?vue&type=template&id=7c16b95a&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dGrid.vue?vue&type=script&lang=js&
 //
@@ -52277,8 +52321,24 @@ var Ros3dGridvue_type_template_id_9d2ae974_staticRenderFns = []
 //
 //
 
+/**
+ * @author Ludwig Waffenschmidt - ludwig.waffenschmidt@outlook.com
+ */
 
 
+
+/**
+ * Create a grid object.
+ * It is a wrapper for [`ROS3D.Grid`]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Grid.html}.
+ * 
+ * @vue-prop {Boolean} [visible=true] - Visibility of this object
+ * @vue-prop {Number} [numCells=10] - The number of cells of the grid
+ * @vue-prop {Number} [lineWidth=1] - The width of the lines in the grid
+ * @vue-prop {Number} [cellSize=1] - The length, in meters, of the side of each cell
+ * @vue-prop {String} [color=#cccccc] - The line color of the grid
+ * 
+ * @vue-data {ROS3D.Grid} object - Handle for the internal [ROS3D.Grid]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Grid.html}
+ */
 /* harmony default export */ var Ros3dGridvue_type_script_lang_js_ = ({
   name: 'ros3d-grid',
   props: {
@@ -52368,8 +52428,8 @@ var Ros3dGridvue_type_template_id_9d2ae974_staticRenderFns = []
 
 var Ros3dGrid_component = normalizeComponent(
   lib_components_Ros3dGridvue_type_script_lang_js_,
-  Ros3dGridvue_type_template_id_9d2ae974_render,
-  Ros3dGridvue_type_template_id_9d2ae974_staticRenderFns,
+  Ros3dGridvue_type_template_id_7c16b95a_render,
+  Ros3dGridvue_type_template_id_7c16b95a_staticRenderFns,
   false,
   null,
   null,
@@ -52378,12 +52438,12 @@ var Ros3dGrid_component = normalizeComponent(
 )
 
 /* harmony default export */ var Ros3dGrid = (Ros3dGrid_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1dfb9b54-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dInteractiveMarkerClient.vue?vue&type=template&id=1b7cca0b&
-var Ros3dInteractiveMarkerClientvue_type_template_id_1b7cca0b_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
-var Ros3dInteractiveMarkerClientvue_type_template_id_1b7cca0b_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4a6848d5-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dInteractiveMarkerClient.vue?vue&type=template&id=71895d62&
+var Ros3dInteractiveMarkerClientvue_type_template_id_71895d62_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
+var Ros3dInteractiveMarkerClientvue_type_template_id_71895d62_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/lib-components/Ros3dInteractiveMarkerClient.vue?vue&type=template&id=1b7cca0b&
+// CONCATENATED MODULE: ./src/lib-components/Ros3dInteractiveMarkerClient.vue?vue&type=template&id=71895d62&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dInteractiveMarkerClient.vue?vue&type=script&lang=js&
 //
@@ -52391,8 +52451,21 @@ var Ros3dInteractiveMarkerClientvue_type_template_id_1b7cca0b_staticRenderFns = 
 //
 //
 
+/**
+ * @author Ludwig Waffenschmidt - ludwig.waffenschmidt@outlook.com
+ */
 
 
+
+/**
+ * A client for an interactive marker topic.
+ * It is a wrapper for [`ROS3D.InteractiveMarkerClient`]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.InteractiveMarkerClient.html}.
+ * 
+ * @vue-prop {Boolean} [visible=true] - Visibility of this object
+ * @vue-prop {String} [topic] - The topic to subscribe to, like '/basic_controls'
+ * 
+ * @vue-data {ROS3D.InteractiveMarkerClient} object - Handle for the internal [ROS3D.InteractiveMarkerClient]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.InteractiveMarkerClient.html}
+ */
 /* harmony default export */ var Ros3dInteractiveMarkerClientvue_type_script_lang_js_ = ({
   name: 'ros3d-interactive-marker-client',
   props: {
@@ -52456,8 +52529,8 @@ var Ros3dInteractiveMarkerClientvue_type_template_id_1b7cca0b_staticRenderFns = 
 
 var Ros3dInteractiveMarkerClient_component = normalizeComponent(
   lib_components_Ros3dInteractiveMarkerClientvue_type_script_lang_js_,
-  Ros3dInteractiveMarkerClientvue_type_template_id_1b7cca0b_render,
-  Ros3dInteractiveMarkerClientvue_type_template_id_1b7cca0b_staticRenderFns,
+  Ros3dInteractiveMarkerClientvue_type_template_id_71895d62_render,
+  Ros3dInteractiveMarkerClientvue_type_template_id_71895d62_staticRenderFns,
   false,
   null,
   null,
@@ -52466,12 +52539,12 @@ var Ros3dInteractiveMarkerClient_component = normalizeComponent(
 )
 
 /* harmony default export */ var Ros3dInteractiveMarkerClient = (Ros3dInteractiveMarkerClient_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1dfb9b54-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dLaserScan.vue?vue&type=template&id=46b5f102&
-var Ros3dLaserScanvue_type_template_id_46b5f102_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
-var Ros3dLaserScanvue_type_template_id_46b5f102_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4a6848d5-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dLaserScan.vue?vue&type=template&id=7fb769f4&
+var Ros3dLaserScanvue_type_template_id_7fb769f4_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
+var Ros3dLaserScanvue_type_template_id_7fb769f4_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/lib-components/Ros3dLaserScan.vue?vue&type=template&id=46b5f102&
+// CONCATENATED MODULE: ./src/lib-components/Ros3dLaserScan.vue?vue&type=template&id=7fb769f4&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dLaserScan.vue?vue&type=script&lang=js&
 //
@@ -52479,8 +52552,26 @@ var Ros3dLaserScanvue_type_template_id_46b5f102_staticRenderFns = []
 //
 //
 
+/**
+ * @author Ludwig Waffenschmidt - ludwig.waffenschmidt@outlook.com
+ */
 
 
+
+/**
+ * A LaserScan client that listens to a given topic and displays the points.
+ * It is a wrapper for [`ROS3D.LaserScan`]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.LaserScan.html}.
+ * 
+ * @vue-prop {Boolean} [visible=true] - Visibility of this object
+ * @vue-prop {String} [topic=/scan] - The marker topic to listen to
+ * @vue-prop {String} [compression=cbor] - Message compression
+ * @vue-prop {Number} [max_pts=10000] - Number of points to draw
+ * @vue-prop {Number} [pointRatio=1] - Point subsampling ratio (default: 1, no subsampling)
+ * @vue-prop {Number} [messageRatio=1] - Message  subsampling ratio (default: 1, no subsampling)
+ * @vue-prop {String} [color=#ff0000] - The color for the laser scan points
+ * 
+ * @vue-data {ROS3D.LaserScan} object - Handle for the internal [ROS3D.LaserScan]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.LaserScan.html}
+ */
 /* harmony default export */ var Ros3dLaserScanvue_type_script_lang_js_ = ({
   name: 'ros3d-laser-scan',
   props: {
@@ -52605,8 +52696,8 @@ var Ros3dLaserScanvue_type_template_id_46b5f102_staticRenderFns = []
 
 var Ros3dLaserScan_component = normalizeComponent(
   lib_components_Ros3dLaserScanvue_type_script_lang_js_,
-  Ros3dLaserScanvue_type_template_id_46b5f102_render,
-  Ros3dLaserScanvue_type_template_id_46b5f102_staticRenderFns,
+  Ros3dLaserScanvue_type_template_id_7fb769f4_render,
+  Ros3dLaserScanvue_type_template_id_7fb769f4_staticRenderFns,
   false,
   null,
   null,
@@ -52615,12 +52706,12 @@ var Ros3dLaserScan_component = normalizeComponent(
 )
 
 /* harmony default export */ var Ros3dLaserScan = (Ros3dLaserScan_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1dfb9b54-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dMarkerClient.vue?vue&type=template&id=60a12b61&
-var Ros3dMarkerClientvue_type_template_id_60a12b61_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
-var Ros3dMarkerClientvue_type_template_id_60a12b61_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4a6848d5-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dMarkerClient.vue?vue&type=template&id=8c782cf8&
+var Ros3dMarkerClientvue_type_template_id_8c782cf8_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
+var Ros3dMarkerClientvue_type_template_id_8c782cf8_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/lib-components/Ros3dMarkerClient.vue?vue&type=template&id=60a12b61&
+// CONCATENATED MODULE: ./src/lib-components/Ros3dMarkerClient.vue?vue&type=template&id=8c782cf8&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dMarkerClient.vue?vue&type=script&lang=js&
 //
@@ -52628,8 +52719,21 @@ var Ros3dMarkerClientvue_type_template_id_60a12b61_staticRenderFns = []
 //
 //
 
+/**
+ * @author Ludwig Waffenschmidt - ludwig.waffenschmidt@outlook.com
+ */
 
 
+
+/**
+ * A marker client that listens to a given marker topic.
+ * It is a wrapper for [`ROS3D.MarkerClient`]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.MarkerClient.html}.
+ * 
+ * @vue-prop {Boolean} [visible=true] - Visibility of this object
+ * @vue-prop {String} [topic=] - The marker topic to listen to
+ * 
+ * @vue-data {ROS3D.MarkerClient} object - Handle for the internal [ROS3D.MarkerClient]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.MarkerClient.html}
+ */
 /* harmony default export */ var Ros3dMarkerClientvue_type_script_lang_js_ = ({
   name: 'ros3d-marker-client',
   props: {
@@ -52692,8 +52796,8 @@ var Ros3dMarkerClientvue_type_template_id_60a12b61_staticRenderFns = []
 
 var Ros3dMarkerClient_component = normalizeComponent(
   lib_components_Ros3dMarkerClientvue_type_script_lang_js_,
-  Ros3dMarkerClientvue_type_template_id_60a12b61_render,
-  Ros3dMarkerClientvue_type_template_id_60a12b61_staticRenderFns,
+  Ros3dMarkerClientvue_type_template_id_8c782cf8_render,
+  Ros3dMarkerClientvue_type_template_id_8c782cf8_staticRenderFns,
   false,
   null,
   null,
@@ -52702,12 +52806,12 @@ var Ros3dMarkerClient_component = normalizeComponent(
 )
 
 /* harmony default export */ var Ros3dMarkerClient = (Ros3dMarkerClient_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1dfb9b54-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dOccupancyGridClient.vue?vue&type=template&id=57bdae90&
-var Ros3dOccupancyGridClientvue_type_template_id_57bdae90_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
-var Ros3dOccupancyGridClientvue_type_template_id_57bdae90_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4a6848d5-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dOccupancyGridClient.vue?vue&type=template&id=6c49b3b2&
+var Ros3dOccupancyGridClientvue_type_template_id_6c49b3b2_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
+var Ros3dOccupancyGridClientvue_type_template_id_6c49b3b2_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/lib-components/Ros3dOccupancyGridClient.vue?vue&type=template&id=57bdae90&
+// CONCATENATED MODULE: ./src/lib-components/Ros3dOccupancyGridClient.vue?vue&type=template&id=6c49b3b2&
 
 // EXTERNAL MODULE: ./node_modules/roslib/src/RosLib.js
 var RosLib = __webpack_require__("e86b");
@@ -52718,9 +52822,26 @@ var RosLib = __webpack_require__("e86b");
 //
 //
 
+/**
+ * @author Ludwig Waffenschmidt - ludwig.waffenschmidt@outlook.com
+ */
 
 
 
+
+/**
+ * An occupancy grid client that listens to a given map topic.
+ * It is a wrapper for [`ROS3D.OccupancyGridClient`]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.OccupancyGridClient.html}.
+ * 
+ * @vue-prop {Boolean} [visible=true] - Visibility of this object
+ * @vue-prop {String} [topic=] - The marker topic to listen to
+ * @vue-prop {Number} [x=0] - X offset
+ * @vue-prop {Number} [y=0] - Y offset
+ * @vue-prop {Number} [z=0] - Z offset
+ * @vue-prop {Boolean} [continuous=false] - If the map should be continuously loaded (e.g., for SLAM)
+ * 
+ * @vue-data {ROS3D.OccupancyGridClient} object - Handle for the internal [ROS3D.OccupancyGridClient]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.OccupancyGridClient.html}
+ */
 /* harmony default export */ var Ros3dOccupancyGridClientvue_type_script_lang_js_ = ({
   name: 'ros3d-occupancy-grid-client',
   props: {
@@ -52732,6 +52853,21 @@ var RosLib = __webpack_require__("e86b");
     topic: {
       type: String,
       default: '',
+      require: false,
+    },
+    x: {
+      type: Number,
+      default: 0,
+      require: false,
+    },
+    y: {
+      type: Number,
+      default: 0,
+      require: false,
+    },
+    z: {
+      type: Number,
+      default: 0,
       require: false,
     },
     continuous: {
@@ -52813,8 +52949,8 @@ var RosLib = __webpack_require__("e86b");
 
 var Ros3dOccupancyGridClient_component = normalizeComponent(
   lib_components_Ros3dOccupancyGridClientvue_type_script_lang_js_,
-  Ros3dOccupancyGridClientvue_type_template_id_57bdae90_render,
-  Ros3dOccupancyGridClientvue_type_template_id_57bdae90_staticRenderFns,
+  Ros3dOccupancyGridClientvue_type_template_id_6c49b3b2_render,
+  Ros3dOccupancyGridClientvue_type_template_id_6c49b3b2_staticRenderFns,
   false,
   null,
   null,
@@ -52823,12 +52959,12 @@ var Ros3dOccupancyGridClient_component = normalizeComponent(
 )
 
 /* harmony default export */ var Ros3dOccupancyGridClient = (Ros3dOccupancyGridClient_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1dfb9b54-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dPath.vue?vue&type=template&id=01f27470&
-var Ros3dPathvue_type_template_id_01f27470_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
-var Ros3dPathvue_type_template_id_01f27470_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4a6848d5-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dPath.vue?vue&type=template&id=7e7a1032&
+var Ros3dPathvue_type_template_id_7e7a1032_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
+var Ros3dPathvue_type_template_id_7e7a1032_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/lib-components/Ros3dPath.vue?vue&type=template&id=01f27470&
+// CONCATENATED MODULE: ./src/lib-components/Ros3dPath.vue?vue&type=template&id=7e7a1032&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dPath.vue?vue&type=script&lang=js&
 //
@@ -52836,8 +52972,22 @@ var Ros3dPathvue_type_template_id_01f27470_staticRenderFns = []
 //
 //
 
+/**
+ * @author Ludwig Waffenschmidt - ludwig.waffenschmidt@outlook.com
+ */
 
 
+
+/**
+ * A Path client that listens to a given topic and displays a line connecting the poses.
+ * It is a wrapper for [`ROS3D.Path`]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Path.html}.
+ * 
+ * @vue-prop {Boolean} [visible=true] - Visibility of this object
+ * @vue-prop {String} [topic=] - The path topic to listen to
+ * @vue-prop {String} [color=#009688] - The color to use for this arrow
+ * 
+ * @vue-data {ROS3D.Path} object - Handle for the internal [ROS3D.Path]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Path.html}
+ */
 /* harmony default export */ var Ros3dPathvue_type_script_lang_js_ = ({
   name: 'ros3d-path',
   props: {
@@ -52909,8 +53059,8 @@ var Ros3dPathvue_type_template_id_01f27470_staticRenderFns = []
 
 var Ros3dPath_component = normalizeComponent(
   lib_components_Ros3dPathvue_type_script_lang_js_,
-  Ros3dPathvue_type_template_id_01f27470_render,
-  Ros3dPathvue_type_template_id_01f27470_staticRenderFns,
+  Ros3dPathvue_type_template_id_7e7a1032_render,
+  Ros3dPathvue_type_template_id_7e7a1032_staticRenderFns,
   false,
   null,
   null,
@@ -52919,12 +53069,12 @@ var Ros3dPath_component = normalizeComponent(
 )
 
 /* harmony default export */ var Ros3dPath = (Ros3dPath_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1dfb9b54-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dPointCloud2.vue?vue&type=template&id=1a51eabc&
-var Ros3dPointCloud2vue_type_template_id_1a51eabc_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
-var Ros3dPointCloud2vue_type_template_id_1a51eabc_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4a6848d5-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dPointCloud2.vue?vue&type=template&id=6dcc015a&
+var Ros3dPointCloud2vue_type_template_id_6dcc015a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
+var Ros3dPointCloud2vue_type_template_id_6dcc015a_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/lib-components/Ros3dPointCloud2.vue?vue&type=template&id=1a51eabc&
+// CONCATENATED MODULE: ./src/lib-components/Ros3dPointCloud2.vue?vue&type=template&id=6dcc015a&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dPointCloud2.vue?vue&type=script&lang=js&
 //
@@ -52932,8 +53082,29 @@ var Ros3dPointCloud2vue_type_template_id_1a51eabc_staticRenderFns = []
 //
 //
 
+/**
+ * @author Ludwig Waffenschmidt - ludwig.waffenschmidt@outlook.com
+ */
 
 
+
+/**
+ * A Path client that listens to a given topic and displays a line connecting the poses.
+ * It is a wrapper for [`ROS3D.PointCloud2`]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.PointCloud2.html}.
+ * 
+ * @vue-prop {Boolean} [visible=true] - Visibility of this object
+ * @vue-prop {String} [topic=/points] - The PointCloud2 topic to listen to
+ * @vue-prop {String} [compression=cbor] - Message compression
+ * @vue-prop {Number} [max_pts=10000] - Number of points to draw
+ * @vue-prop {Number} [pointRatio=1] - Point subsampling ratio (default: 1, no subsampling)
+ * @vue-prop {Number} [messageRatio=1] - Message  subsampling ratio (default: 1, no subsampling)
+ * @vue-prop {Number} [colorsrc=rgb] - The field to be used for coloring
+ * @vue-prop {Object} [colormap] - Function that turns the colorsrc field value to a color
+ * @vue-prop {Number} [particleSize=0.25] - Size of the particles
+ * @vue-prop {String} [color=#009688] - The color to use for the particles
+ * 
+ * @vue-data {ROS3D.PointCloud2} object - Handle for the internal [ROS3D.PointCloud2]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.PointCloud2.html}
+ */
 /* harmony default export */ var Ros3dPointCloud2vue_type_script_lang_js_ = ({
   name: 'ros3d-point-cloud2',
   props: {
@@ -53074,8 +53245,8 @@ var Ros3dPointCloud2vue_type_template_id_1a51eabc_staticRenderFns = []
 
 var Ros3dPointCloud2_component = normalizeComponent(
   lib_components_Ros3dPointCloud2vue_type_script_lang_js_,
-  Ros3dPointCloud2vue_type_template_id_1a51eabc_render,
-  Ros3dPointCloud2vue_type_template_id_1a51eabc_staticRenderFns,
+  Ros3dPointCloud2vue_type_template_id_6dcc015a_render,
+  Ros3dPointCloud2vue_type_template_id_6dcc015a_staticRenderFns,
   false,
   null,
   null,
@@ -53084,12 +53255,12 @@ var Ros3dPointCloud2_component = normalizeComponent(
 )
 
 /* harmony default export */ var Ros3dPointCloud2 = (Ros3dPointCloud2_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1dfb9b54-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dPoseArrow.vue?vue&type=template&id=4f3b9fe3&
-var Ros3dPoseArrowvue_type_template_id_4f3b9fe3_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
-var Ros3dPoseArrowvue_type_template_id_4f3b9fe3_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4a6848d5-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dPoseArrow.vue?vue&type=template&id=67439efa&
+var Ros3dPoseArrowvue_type_template_id_67439efa_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
+var Ros3dPoseArrowvue_type_template_id_67439efa_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/lib-components/Ros3dPoseArrow.vue?vue&type=template&id=4f3b9fe3&
+// CONCATENATED MODULE: ./src/lib-components/Ros3dPoseArrow.vue?vue&type=template&id=67439efa&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dPoseArrow.vue?vue&type=script&lang=js&
 //
@@ -53097,9 +53268,26 @@ var Ros3dPoseArrowvue_type_template_id_4f3b9fe3_staticRenderFns = []
 //
 //
 
+/**
+ * @author Ludwig Waffenschmidt - ludwig.waffenschmidt@outlook.com
+ */
 
 
 
+
+/**
+ * This is the same as the {@link Ros3dArrow}, but it directly takes a [`ROSLIB.Pose`]{@link http://robotwebtools.org/jsdoc/roslibjs/current/Pose.html}.
+ * 
+ * @vue-prop {Boolean} [visible=true] - Visibility of this object
+ * @vue-prop {ROSLIB.Pose} [pose] - [ROSLIB.Pose]{@link http://robotwebtools.org/jsdoc/roslibjs/current/Pose.html} of the arrow
+ * @vue-prop {Number} length (optional) - the length of the arrow
+ * @vue-prop {Number} [headLength=1] - The head length of the arrow
+ * @vue-prop {Number} [shaftDiameter=0.2] - The shaft diameter of the arrow
+ * @vue-prop {Number} [headDiameter=0.05] - The head diameter of the arrow
+ * @vue-prop {String} [color=#00ff00] - The color to use for this arrow
+ * 
+ * @vue-data {ROS3D.Arrow} object - Handle for the internal [ROS3D.Arrow]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Arrow.html}
+ */
 /* harmony default export */ var Ros3dPoseArrowvue_type_script_lang_js_ = ({
   name: 'ros3d-pose-arrow',
   inheritAttrs: false,
@@ -53208,8 +53396,8 @@ var Ros3dPoseArrowvue_type_template_id_4f3b9fe3_staticRenderFns = []
 
 var Ros3dPoseArrow_component = normalizeComponent(
   lib_components_Ros3dPoseArrowvue_type_script_lang_js_,
-  Ros3dPoseArrowvue_type_template_id_4f3b9fe3_render,
-  Ros3dPoseArrowvue_type_template_id_4f3b9fe3_staticRenderFns,
+  Ros3dPoseArrowvue_type_template_id_67439efa_render,
+  Ros3dPoseArrowvue_type_template_id_67439efa_staticRenderFns,
   false,
   null,
   null,
@@ -53218,12 +53406,12 @@ var Ros3dPoseArrow_component = normalizeComponent(
 )
 
 /* harmony default export */ var Ros3dPoseArrow = (Ros3dPoseArrow_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1dfb9b54-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dSceneNode.vue?vue&type=template&id=36779397&
-var Ros3dSceneNodevue_type_template_id_36779397_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
-var Ros3dSceneNodevue_type_template_id_36779397_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4a6848d5-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dSceneNode.vue?vue&type=template&id=50709e6a&
+var Ros3dSceneNodevue_type_template_id_50709e6a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div')}
+var Ros3dSceneNodevue_type_template_id_50709e6a_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/lib-components/Ros3dSceneNode.vue?vue&type=template&id=36779397&
+// CONCATENATED MODULE: ./src/lib-components/Ros3dSceneNode.vue?vue&type=template&id=50709e6a&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dSceneNode.vue?vue&type=script&lang=js&
 //
@@ -53231,24 +53419,38 @@ var Ros3dSceneNodevue_type_template_id_36779397_staticRenderFns = []
 //
 //
 
+/**
+ * @author Ludwig Waffenschmidt - ludwig.waffenschmidt@outlook.com
+ */
 
 
+
+/**
+ * A SceneNode can be used to keep track of a 3D object with respect to a ROS frame within a scene.
+ * It is more or less a wrapper for [`ROS3D.SceneNode`]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.SceneNode.html}.
+ * 
+ * @vue-prop {Object} model - The THREE 3D object to be rendered
+ * @vue-prop {String} [frameID=base_link] - The frame ID this object belongs to
+ * @vue-prop {Boolean} [visible=true] - Visibility of this object
+ * 
+ * @vue-data {ROS3D.SceneNode} object - Handle for the internal [ROS3D.SceneNode]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.SceneNode.html}
+ */
 /* harmony default export */ var Ros3dSceneNodevue_type_script_lang_js_ = ({
   name: 'ros3d-scene-node',
   props: {
-    visible: {
-      type: Boolean,
-      default: true,
-      require: false,
+    model: {
+      type: Object,
+      require: true,
     },
     frameID: {
       type: String,
       default: 'base_link',
       require: false,
     },
-    model: {
-      type: Object,
-      require: true,
+    visible: {
+      type: Boolean,
+      default: true,
+      require: false,
     },
   },
   watch: {
@@ -53305,8 +53507,8 @@ var Ros3dSceneNodevue_type_template_id_36779397_staticRenderFns = []
 
 var Ros3dSceneNode_component = normalizeComponent(
   lib_components_Ros3dSceneNodevue_type_script_lang_js_,
-  Ros3dSceneNodevue_type_template_id_36779397_render,
-  Ros3dSceneNodevue_type_template_id_36779397_staticRenderFns,
+  Ros3dSceneNodevue_type_template_id_50709e6a_render,
+  Ros3dSceneNodevue_type_template_id_50709e6a_staticRenderFns,
   false,
   null,
   null,
@@ -53315,12 +53517,12 @@ var Ros3dSceneNode_component = normalizeComponent(
 )
 
 /* harmony default export */ var Ros3dSceneNode = (Ros3dSceneNode_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1dfb9b54-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dViewer.vue?vue&type=template&id=3103bba4&
-var Ros3dViewervue_type_template_id_3103bba4_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[(_vm.loaded)?_vm._t("default"):_vm._e()],2)}
-var Ros3dViewervue_type_template_id_3103bba4_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4a6848d5-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib-components/Ros3dViewer.vue?vue&type=template&id=ce124b7a&
+var Ros3dViewervue_type_template_id_ce124b7a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[(_vm.loaded)?_vm._t("default"):_vm._e()],2)}
+var Ros3dViewervue_type_template_id_ce124b7a_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/lib-components/Ros3dViewer.vue?vue&type=template&id=3103bba4&
+// CONCATENATED MODULE: ./src/lib-components/Ros3dViewer.vue?vue&type=template&id=ce124b7a&
 
 // EXTERNAL MODULE: ./node_modules/@tweenjs/tween.js/dist/tween.esm.js
 var tween_esm = __webpack_require__("22b5");
@@ -53337,6 +53539,10 @@ var main = __webpack_require__("5118");
 //
 //
 
+/**
+ * @author Ludwig Waffenschmidt - ludwig.waffenschmidt@outlook.com
+ */
+
 
 
 
@@ -53348,6 +53554,28 @@ var main = __webpack_require__("5118");
 
 
 
+/**
+ * @typedef {Object} TouchResult
+ * @property {ROSLIB.Pose} pose - [`ROSLIB.Pose`]{@link http://robotwebtools.org/jsdoc/roslibjs/current/Pose.html} object relative to the `fixedFrame` TF frame
+ * @property {number[]} screenPosition - X and Y coordinates on the screen
+ */
+
+/**
+ * This is the root object all others are placed in.
+ * It is more or less a wrapper for [`ROS3D.Viewer`]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Viewer.html} with some additional logic for right-click/long-press handling and already integrates [`ROSLIB.TFClient`]{@link http://robotwebtools.org/jsdoc/roslibjs/current/TFClient.html}.
+ * 
+ * @vue-prop {ROSLIB.Ros} ros - [ROSLIB.Ros]{@link http://robotwebtools.org/jsdoc/roslibjs/current/Ros.html} connection handle
+ * @vue-prop {String} [background=#7e7e7e] - The color to render the background, like '#efefef'
+ * @vue-prop {Boolean} [antialias=true] - If antialiasing should be used
+ * @vue-prop {String} [fixedFrame=/map] - The fixed base frame for the tf listener
+ * @vue-prop {Number} [longPressTolerance=15] - Tolerance in pixels for finger movement during long-press
+ * @vue-prop {Number} [longPressDuration=750] - Duration for long-press in milliseconds
+ * 
+ * @vue-data {ROS3D.Viewer} viewer - Handle for the internal [ROS3D.Viewer]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Viewer.html}
+ * @vue-data {ROSLIB.TFClient} tfClient - Handle for the internal [ROSLIB.TFClient]{@link http://robotwebtools.org/jsdoc/roslibjs/current/TFClient.html}
+ * 
+ * @vue-event {TouchResult} touch - Emitted on right-click or long-press. {@link TouchResult}
+ */
 /* harmony default export */ var Ros3dViewervue_type_script_lang_js_ = ({
   name: 'ros3d-viewer',
   props: {
@@ -53360,14 +53588,14 @@ var main = __webpack_require__("5118");
       default: '#7e7e7e',
       require: false,
     },
-    fixedFrame: {
-      type: String,
-      default: '/map',
-      require: false,
-    },
     antialias: {
       type: Boolean,
       default: true,
+      require: false,
+    },
+    fixedFrame: {
+      type: String,
+      default: '/map',
       require: false,
     },
     longPressTolerance: {
@@ -53633,8 +53861,8 @@ var main = __webpack_require__("5118");
 
 var Ros3dViewer_component = normalizeComponent(
   lib_components_Ros3dViewervue_type_script_lang_js_,
-  Ros3dViewervue_type_template_id_3103bba4_render,
-  Ros3dViewervue_type_template_id_3103bba4_staticRenderFns,
+  Ros3dViewervue_type_template_id_ce124b7a_render,
+  Ros3dViewervue_type_template_id_ce124b7a_staticRenderFns,
   false,
   null,
   null,

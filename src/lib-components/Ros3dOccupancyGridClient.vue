@@ -3,9 +3,26 @@
 </template>
 
 <script>
+/**
+ * @author Ludwig Waffenschmidt - ludwig.waffenschmidt@outlook.com
+ */
+
 import * as ROS3D from 'ros3d'
 import * as ROSLIB from 'roslib'
 
+/**
+ * An occupancy grid client that listens to a given map topic.
+ * It is a wrapper for [`ROS3D.OccupancyGridClient`]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.OccupancyGridClient.html}.
+ * 
+ * @vue-prop {Boolean} [visible=true] - Visibility of this object
+ * @vue-prop {String} [topic=] - The marker topic to listen to
+ * @vue-prop {Number} [x=0] - X offset
+ * @vue-prop {Number} [y=0] - Y offset
+ * @vue-prop {Number} [z=0] - Z offset
+ * @vue-prop {Boolean} [continuous=false] - If the map should be continuously loaded (e.g., for SLAM)
+ * 
+ * @vue-data {ROS3D.OccupancyGridClient} object - Handle for the internal [ROS3D.OccupancyGridClient]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.OccupancyGridClient.html}
+ */
 export default {
   name: 'ros3d-occupancy-grid-client',
   props: {
@@ -17,6 +34,21 @@ export default {
     topic: {
       type: String,
       default: '',
+      require: false,
+    },
+    x: {
+      type: Number,
+      default: 0,
+      require: false,
+    },
+    y: {
+      type: Number,
+      default: 0,
+      require: false,
+    },
+    z: {
+      type: Number,
+      default: 0,
       require: false,
     },
     continuous: {

@@ -3,8 +3,29 @@
 </template>
 
 <script>
+/**
+ * @author Ludwig Waffenschmidt - ludwig.waffenschmidt@outlook.com
+ */
+
 import * as ROS3D from 'ros3d'
 
+/**
+ * An Axes object can be used to display the axis of a particular coordinate frame.
+ * It is a wrapper for [`ROS3D.Axes`]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Axes.html}.
+ * 
+ * @vue-prop {Boolean} [visible=true] - Visibility of this object
+ * @vue-prop {Number} [x=0] - Origin x
+ * @vue-prop {Number} [y=0] - Origin y
+ * @vue-prop {Number} [z=0] - Origin z
+ * @vue-prop {Number} [scale=1] - The scale of the frame (defaults to 1.0)
+ * @vue-prop {Number} [lineType=full] - The line type for the axes. Supported line types: 'dashed' and 'full'.
+ * @vue-prop {Number} [lineDashLength=0.1] - The length of the dashes, relative to the length of the axis. Maximum value is 1, which means the dash length is equal to the length of the axis. Parameter only applies when lineType is set to dashed.
+ * @vue-prop {Number} [headLength=0.1] - The head length to render
+ * @vue-prop {Number} [shaftRadius=0.008] - The shaft radius to render
+ * @vue-prop {Number} [headRadius=0.023] - The head radius to render
+ * 
+ * @vue-data {ROS3D.Axes} object - Handle for the internal [ROS3D.Axes]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Axes.html}
+ */
 export default {
   name: 'ros3d-axes',
   props: {

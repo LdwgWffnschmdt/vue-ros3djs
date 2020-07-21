@@ -1,6 +1,6 @@
 {
   "name": "vue-ros3djs",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Vue components for ros3djs",
   "homepage": "https://github.com/LdwgWffnschmdt/vue-ros3djs",
   "repository": {
@@ -33,6 +33,9 @@
     "three": "^0.89.0"
   },
   "devDependencies": {
+    "jsdoc": "^3.6.4",
+    "jsdoc-vuejs": "^3.0.8",
+    "minami": "^1.2.3",
     "vue": "^2.6.11",
     "vue-template-compiler": "^2.6.11"
   }

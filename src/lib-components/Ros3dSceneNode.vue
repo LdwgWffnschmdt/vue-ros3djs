@@ -3,24 +3,38 @@
 </template>
 
 <script>
+/**
+ * @author Ludwig Waffenschmidt - ludwig.waffenschmidt@outlook.com
+ */
+
 import * as ROS3D from 'ros3d'
 
+/**
+ * A SceneNode can be used to keep track of a 3D object with respect to a ROS frame within a scene.
+ * It is more or less a wrapper for [`ROS3D.SceneNode`]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.SceneNode.html}.
+ * 
+ * @vue-prop {Object} model - The THREE 3D object to be rendered
+ * @vue-prop {String} [frameID=base_link] - The frame ID this object belongs to
+ * @vue-prop {Boolean} [visible=true] - Visibility of this object
+ * 
+ * @vue-data {ROS3D.SceneNode} object - Handle for the internal [ROS3D.SceneNode]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.SceneNode.html}
+ */
 export default {
   name: 'ros3d-scene-node',
   props: {
-    visible: {
-      type: Boolean,
-      default: true,
-      require: false,
+    model: {
+      type: Object,
+      require: true,
     },
     frameID: {
       type: String,
       default: 'base_link',
       require: false,
     },
-    model: {
-      type: Object,
-      require: true,
+    visible: {
+      type: Boolean,
+      default: true,
+      require: false,
     },
   },
   watch: {

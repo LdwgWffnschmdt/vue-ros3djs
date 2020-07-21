@@ -3,8 +3,21 @@
 </template>
 
 <script>
+/**
+ * @author Ludwig Waffenschmidt - ludwig.waffenschmidt@outlook.com
+ */
+
 import * as ROS3D from 'ros3d'
 
+/**
+ * A client for an interactive marker topic.
+ * It is a wrapper for [`ROS3D.InteractiveMarkerClient`]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.InteractiveMarkerClient.html}.
+ * 
+ * @vue-prop {Boolean} [visible=true] - Visibility of this object
+ * @vue-prop {String} [topic] - The topic to subscribe to, like '/basic_controls'
+ * 
+ * @vue-data {ROS3D.InteractiveMarkerClient} object - Handle for the internal [ROS3D.InteractiveMarkerClient]{@link http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.InteractiveMarkerClient.html}
+ */
 export default {
   name: 'ros3d-interactive-marker-client',
   props: {
