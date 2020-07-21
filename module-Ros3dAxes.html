@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Ros3dAxes - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Ros3dArrow.html">Ros3dArrow</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Ros3dAxes.html">Ros3dAxes</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Ros3dGrid.html">Ros3dGrid</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Ros3dInteractiveMarkerClient.html">Ros3dInteractiveMarkerClient</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Ros3dLaserScan.html">Ros3dLaserScan</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Ros3dMarkerClient.html">Ros3dMarkerClient</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Ros3dOccupancyGridClient.html">Ros3dOccupancyGridClient</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Ros3dPath.html">Ros3dPath</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Ros3dPointCloud2.html">Ros3dPointCloud2</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Ros3dPoseArrow.html">Ros3dPoseArrow</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Ros3dSceneNode.html">Ros3dSceneNode</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Ros3dViewer.html">Ros3dViewer</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Ros3dAxes</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>An Axes object can be used to display the axis of a particular coordinate frame.
+It is a wrapper for <a href="http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Axes.html"><code>ROS3D.Axes</code></a>.</p></p></div></div> 
+
+
+<h3 class="subsection-title" style="margin-top: 1em" data-jsdoc-vuejs="section-props">Props</h3>
+<table class="params" data-jsdoc-vuejs="table-props">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Default value</th>
+        <th>Required?</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody><tr>
+        <td class="name"><code>visible</code></td>
+        <td><code>Boolean</code></td>
+        <td><code>true</code></td>
+        <td>No</td>
+        <td>Visibility of this object</td>
+    </tr><tr>
+        <td class="name"><code>x</code></td>
+        <td><code>Number</code></td>
+        <td><code>0</code></td>
+        <td>No</td>
+        <td>Origin x</td>
+    </tr><tr>
+        <td class="name"><code>y</code></td>
+        <td><code>Number</code></td>
+        <td><code>0</code></td>
+        <td>No</td>
+        <td>Origin y</td>
+    </tr><tr>
+        <td class="name"><code>z</code></td>
+        <td><code>Number</code></td>
+        <td><code>0</code></td>
+        <td>No</td>
+        <td>Origin z</td>
+    </tr><tr>
+        <td class="name"><code>scale</code></td>
+        <td><code>Number</code></td>
+        <td><code>1</code></td>
+        <td>No</td>
+        <td>The scale of the frame (defaults to 1.0)</td>
+    </tr><tr>
+        <td class="name"><code>lineType</code></td>
+        <td><code>Number</code></td>
+        <td><code>full</code></td>
+        <td>No</td>
+        <td>The line type for the axes. Supported line types: 'dashed' and 'full'.</td>
+    </tr><tr>
+        <td class="name"><code>lineDashLength</code></td>
+        <td><code>Number</code></td>
+        <td><code>0.1</code></td>
+        <td>No</td>
+        <td>The length of the dashes, relative to the length of the axis. Maximum value is 1, which means the dash length is equal to the length of the axis. Parameter only applies when lineType is set to dashed.</td>
+    </tr><tr>
+        <td class="name"><code>headLength</code></td>
+        <td><code>Number</code></td>
+        <td><code>0.1</code></td>
+        <td>No</td>
+        <td>The head length to render</td>
+    </tr><tr>
+        <td class="name"><code>shaftRadius</code></td>
+        <td><code>Number</code></td>
+        <td><code>0.008</code></td>
+        <td>No</td>
+        <td>The shaft radius to render</td>
+    </tr><tr>
+        <td class="name"><code>headRadius</code></td>
+        <td><code>Number</code></td>
+        <td><code>0.023</code></td>
+        <td>No</td>
+        <td>The head radius to render</td>
+    </tr></tbody>
+</table>
+
+
+
+<h3 class="subsection-title" style="margin-top: 1em" data-jsdoc-vuejs="section-data">Data</h3>
+<table class="params" data-jsdoc-vuejs="table-data">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Default value</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody><tr>
+        <td class="name"><code>object</code></td>
+        <td><code>ROS3D.Axes</code></td>
+        <td>-</td>
+        <td>Handle for the internal <a href="http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Axes.html">ROS3D.Axes</a></td>
+    </tr></tbody>
+</table>
+
+
+
+
+
+
+<div class="container-overview"><div><p> 
+</div>
+        
+
+        
+            
+<div class="section-method">
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+            
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>An Axes object can be used to display the axis of a particular coordinate frame.
+It is a wrapper for <a href="http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Axes.html"><code>ROS3D.Axes</code></a>.</p></p></div></div> 
+
+
+<h3 class="subsection-title" style="margin-top: 1em" data-jsdoc-vuejs="section-props">Props</h3>
+<table class="params" data-jsdoc-vuejs="table-props">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Default value</th>
+        <th>Required?</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody><tr>
+        <td class="name"><code>visible</code></td>
+        <td><code>Boolean</code></td>
+        <td><code>true</code></td>
+        <td>No</td>
+        <td>Visibility of this object</td>
+    </tr><tr>
+        <td class="name"><code>x</code></td>
+        <td><code>Number</code></td>
+        <td><code>0</code></td>
+        <td>No</td>
+        <td>Origin x</td>
+    </tr><tr>
+        <td class="name"><code>y</code></td>
+        <td><code>Number</code></td>
+        <td><code>0</code></td>
+        <td>No</td>
+        <td>Origin y</td>
+    </tr><tr>
+        <td class="name"><code>z</code></td>
+        <td><code>Number</code></td>
+        <td><code>0</code></td>
+        <td>No</td>
+        <td>Origin z</td>
+    </tr><tr>
+        <td class="name"><code>scale</code></td>
+        <td><code>Number</code></td>
+        <td><code>1</code></td>
+        <td>No</td>
+        <td>The scale of the frame (defaults to 1.0)</td>
+    </tr><tr>
+        <td class="name"><code>lineType</code></td>
+        <td><code>Number</code></td>
+        <td><code>full</code></td>
+        <td>No</td>
+        <td>The line type for the axes. Supported line types: 'dashed' and 'full'.</td>
+    </tr><tr>
+        <td class="name"><code>lineDashLength</code></td>
+        <td><code>Number</code></td>
+        <td><code>0.1</code></td>
+        <td>No</td>
+        <td>The length of the dashes, relative to the length of the axis. Maximum value is 1, which means the dash length is equal to the length of the axis. Parameter only applies when lineType is set to dashed.</td>
+    </tr><tr>
+        <td class="name"><code>headLength</code></td>
+        <td><code>Number</code></td>
+        <td><code>0.1</code></td>
+        <td>No</td>
+        <td>The head length to render</td>
+    </tr><tr>
+        <td class="name"><code>shaftRadius</code></td>
+        <td><code>Number</code></td>
+        <td><code>0.008</code></td>
+        <td>No</td>
+        <td>The shaft radius to render</td>
+    </tr><tr>
+        <td class="name"><code>headRadius</code></td>
+        <td><code>Number</code></td>
+        <td><code>0.023</code></td>
+        <td>No</td>
+        <td>The head radius to render</td>
+    </tr></tbody>
+</table>
+
+
+
+<h3 class="subsection-title" style="margin-top: 1em" data-jsdoc-vuejs="section-data">Data</h3>
+<table class="params" data-jsdoc-vuejs="table-data">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Default value</th>
+        <th>Description</th>
+    </tr>
+    </thead>
+    <tbody><tr>
+        <td class="name"><code>object</code></td>
+        <td><code>ROS3D.Axes</code></td>
+        <td>-</td>
+        <td>Handle for the internal <a href="http://robotwebtools.org/jsdoc/ros3djs/current/ROS3D.Axes.html">ROS3D.Axes</a></td>
+    </tr></tbody>
+</table>
+
+
+
+
+
+
+<div class="container-overview"><div><p> 
+</div>
+        
+
+        
+            
+<div class="section-method">
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+        
+            
+<div class="section-method">
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Tue Jul 21 2020 11:24:00 GMT+0000 (Coordinated Universal Time) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
