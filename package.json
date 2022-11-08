@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@tweenjs/tween.js": "^18.5.0",
-    "@vue/cli-service": "^4.1.2",
+    "@vue/cli-service": "^5.0.8",
     "ros3d": "^1.0.1",
     "three": "^0.89.0"
   },
